@@ -68,17 +68,25 @@ el archivo connection con extensión de typescript.
 
 ---
 
-### **Métrica 2: Aquí va el título**
+### **Métrica 2: Gauge**
 #### **Descripción**
-Aquí va la descripción.
+Acción que devuelve la medida instantanea de un valor, en donde dicho valor aumenta y disminuye 
+arbitrariamente.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Es ideal para cuantificar el uso actual de la memoria, cpu, temperatura, espacio en disco, etc.
 #### **Ejemplo**
 ```typescript
-/*Aquí va el ejemplo.*/
+let processPhysicalMemoryGauge = new GaugeOptions {
+  Name = "Process Physical Memory",
+  MeasurementUnit = Unit.Bytes
+}
+let process = Process.GetCurrentProcess()
+_metrics.Measure.Gauge.SetValue(MetricsRegistry.Gauges.TestGauge, process.WorkingSet64)
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+La implementación de la métrica Gauge es adecuado para dar a conocer el rendimiento de los
+componentes del nodo Heroku tales como memoria, cpu y espacio en disco frente a las solicitudes
+HTTP e invocaciones de métodos tanto del lado back end como front end.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
@@ -95,19 +103,14 @@ El contexto de utilización de esta métrica se daría cuando se quiere conocer 
 En los peajes de vehículos se podría querer conocer cuántos vehículos hicieron uso de peaje electrónico para lo cual hacen uso de un contador para conocer dicho valor.
 ```typescript
 import { Counter, MetricRegistry } from "inspector-metrics";
- 
 const registry = new MetricRegistry();
 const requestCount: Counter = registry.newCounter("requestCount");
- 
 // +1
 requestCount.increment(1);
- 
 // -1
 requestCount.decrement(1);
- 
 // =0
 requestCount.getCount();
- 
 requestCount.reset();*/
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
