@@ -1,0 +1,234 @@
+# Asignación 3 - Ingeniería de Software 2
+
+## Integrantes
+
+- Guillermo Baca **20151635**
+- Miguel Colina **20150346**
+- Pelmef Méndez **20150865**
+- Javier Ramírez **20152241**
+- Caleb Santiago **20152339**
+
+---
+
+## Abstract
+
+Aquí va el abstract.
+
+---
+
+## Introducción
+
+Aquí va la introducción.
+
+---
+
+## Explicación del concepto de las métricas de software así como su relación con la ingeniería de software
+
+Aquí va eso. 
+
+---
+
+## Métricas de Sofwtare
+
+### **Métrica 1: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 2: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 3: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 4: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 5: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 6: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 7: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 8: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 9: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+### **Métrica 10: Aquí va el título**
+#### **Descripción**
+Aquí va la descripción.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Aquí va eso.
+#### **Ejemplo**
+```typescript
+/*Aquí va el ejemplo.*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Aquí va eso.
+#### **Aplicación al proyecto de software**
+```typescript
+/*Aquí va la aplicación.*/
+```
+
+---
+
+## Conclusiones
+
+Aquí van las conclusiones.
+
+---
+
+## Rúbrica
+
+| Criterio | Sobresaliente | Aceptable | Deficiente |
+|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.Clasificación de fuentes | El alumno presenta una adecuada clasificación de los temas recopilados, considerando las áreas y sub áreas del tema escogido. (5 ptos.)   | Existen cierta información que no guarda una relación directa con el tema analizado. (4-3 ptos.)  | Las fuentes bibliográficas son dispersas y no guardan relación con el tema escogido. (1-2 ptos.)  |
+| 2.Material relevante obtenido de fuentes confiables | La información obtenida es de alta calidad dada por: conferencias o journals de la especialidad y de alto impacto. Clasificación del material obtenido de journals q1-q2. (5 ptos.)  | Alguna de la información recopilada proviene de fuentes de dudosa procedencia. Se ha centrado en journals q3-q4 o en congresos de la especialidad de bajo impacto. (4-3 ptos.) | El material recopilado ha sido obtenido de fuentes de bajo nivel, en algunos casos se presume que proviene de journals o conferencias clasificadas como depredadoras. (1-2 ptos.) |
+| 3.Utilización del formato APA u otro formato de referencia | Se ha utilizado de forma adecuada el formato APA, Vancouver o Harvard, con sus respectivas variantes aceptadas. Esto incluye la referencia a todo nivel: texto y figuras. (5 ptos.) | Se presentan ciertas fallas, menos al 30% de referencias utilizadas de forma errónea o material no referenciado, al interior del artículo. (4-3 ptos.)  | No se ha utilizado el formato de referencia adecuado o se ha usado combinación entre varios formatos. Existen diversas partes sin referenciar al interior del artículo. (1-2 ptos.)  |
+| 4.Síntesis adecuada de la información recopilada  | Se han tomado aproximadamente más de 5 artículos para la elaboración de su artículo. Información relevante ha sido obtenida de cada uno de ellos, sintetizando de forma adecuada el aporte de cada uno de ellos. (5 ptos.)     | El número de referencias tomadas para el artículo ha sido entre 3 y <5 artículos. Algunos artículos no han sido adecuadament e resumidos o se presume que han sido colocados para llenar vacíos en su artículo. (4-3 ptos.)      | La cantidad de artículos considerados ha sido < 3. La mayor parte de la información obtenida no es relevante o no está adecuadamente resumida. (1-2 ptos)   |
+
+---
+
+## Referencias
+
+- Aquí va la referencia 1
+- Aquí va la referencia 2
+- Aquí va la referencia 3
