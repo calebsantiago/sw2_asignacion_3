@@ -66,17 +66,32 @@ Aquí va eso.
 
 ---
 
-### **Métrica 3: Aquí va el título**
+### **Métrica 3: Counter**
 #### **Descripción**
-Aquí va la descripción.
+Permite cuantificar las llamadas que se puede realizar de una función, variables, etc.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+El contexto de utilización de esta métrica se daría cuando se quiere conocer cuántas veces se hace llamada a un método, por ejemplo en el caso de una aerolínea se quisiera saber cuántas veces se hizo uso del método de pago.
 #### **Ejemplo**
+En los peajes de vehículos se podría querer conocer cuántos vehículos hicieron uso de peaje electrónico para lo cual hacen uso de un contador para conocer dicho valor.
 ```typescript
-/*Aquí va el ejemplo.*/
+/*import { Counter, MetricRegistry } from "inspector-metrics";
+ 
+const registry = new MetricRegistry();
+const requestCount: Counter = registry.newCounter("requestCount");
+ 
+// +1
+requestCount.increment(1);
+ 
+// -1
+requestCount.decrement(1);
+ 
+// =0
+requestCount.getCount();
+ 
+requestCount.reset();*/
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+La métrica identificada es viable a implementar en nuestro proyecto de software y en muchos más, en específico si deseamos la implementación de esta métrica en nuestro proyecto de software podemos querer conocer cuántos prestadores de servicios recurren a la funcionalidad de localización de su origen y destino para ejecutar el servicio, evidenciando si dicha funcionalidad es relevante para los usuarios,  por otro lado también podemos querer conocer el porcentaje de servicios que se ejecutan respecto al total de cotizaciones para lo cual podríamos implementamos un contador para las cotizaciones y otro para los servicios finalizados y podríamos conocer dicho valor.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
