@@ -58,7 +58,7 @@ using(_metrics.Measure.Timer.Time(requestTimer)) {
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 La métrica Timer es adecuada para su utilización en el proyecto de software, ya que gracias a ella 
-se puede dar a conocer cuánto es la duración así como la tasa ocurrencia de las consultas que se 
+se puede dar a conocer cuánto es la duración, así como la tasa ocurrencia de las consultas que se 
 realizan a la base de datos Atlas MongoDB a través de la librería Mongoose,  la cual se implementa en 
 el archivo connection con extensión de typescript.
 #### **Aplicación al proyecto de software**
