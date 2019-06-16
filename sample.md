@@ -99,17 +99,26 @@ La métrica identificada es viable a implementar en nuestro proyecto de software
 
 ---
 
-### **Métrica 4: Aquí va el título**
+### **Métrica 4: Meter**
 #### **Descripción**
-Aquí va la descripción.
+Meter mide la tasa de eventos realizados de diferentes maneras. La tasa media es la tasa promedio de eventos. Por lo general, se representa como la tasa total para toda la vida útil de su aplicación (por ejemplo, la cantidad total de solicitudes manejadas, dividida por la cantidad de segundos que el proceso ha estado ejecutándose), no ofrece una sensación de actualidad. Afortunadamente, los medidores también registran tres diferentes promedios móviles de ponderación exponencial: los promedios móviles de 1, 5 y 15 minutos.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Como meter permite medir la tasa de eventos realizados, podemos evaluar la cantidad de transacciones que se realizaron a un método de un software en un determinado rango de tiempo, se podría evaluar cuántas veces se realiza la transacción de compras en una página web en un día festivo. De esta manera podemos estar a la vanguardia de las afluencia que tendrá el sistema en cierto periodo de tiempo.
 #### **Ejemplo**
 ```typescript
-/*Aquí va el ejemplo.*/
+/*import { Meter, MetricRegistry } from "inspector-metrics";
+const registry = new MetricRegistry();
+const callCount: Meter = registry.newMeter("callCount");
+callCount.mark(1);
+const count: number = callCount.getCount();
+const m15: number = callCount.get15MinuteRate();
+const m5: number = callCount.get5MinuteRate();
+const m1: number = callCount.get1MinuteRate();
+const mean: number = callCount.getMeanRate();
+*/
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Es viable identificar la cantidad de solicitudes de cotización en un periodo de tiempo para poder saber cual es el impacto que tiene nuestra aplicación. 
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
