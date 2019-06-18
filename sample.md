@@ -32,16 +32,26 @@ Aquí va eso.
 
 ### **Métrica 1: Complejidad Ciclomática**
 #### **Descripción**
-Se enfoca en medir la complejidad de una estructura de código a través de un gráfico de flujo de control, el cual se desarrolla sobre la base del mismo programa, con la finalidad de cuantificar el número de rutas linealmente independientes (Tiwari & Kumar, 2014). Por lo tanto, la fórmula de la complejidad ciclomática de un gráfico G con "e" lados o aristas, "n" vértices o nodos y "p" componentes conectados es: **V(G) = e - n + 2p**, en donde 2 es el resultado de agregar un lado extra desde el nodo de salida al nodo de cada gráfico del módulo de componentes (Henderson-Sellers & Tegarden, 1994).
-
+Se enfoca en medir la complejidad de una estructura de código a través de un gráfico de flujo de control, el cual se desarrolla sobre la base del mismo programa, con la finalidad de cuantificar el número de rutas linealmente independientes (Tiwari & Kumar, 2014). Por lo tanto, la fórmula de la complejidad ciclomática de un gráfico G con "e" lados o aristas, "n" nodos o vértices y "p" componentes conectados es: **V(G) = e - n + 2p**, en donde 2 es el resultado de agregar un lado extra desde el nodo de salida al nodo de cada gráfico del módulo de componentes (Henderson-Sellers & Tegarden, 1994).
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Su utilidad se puede observar en escenarios tales como la estimación de los esfuerzos requeridos para el desarrollo de pruebas unitarias (longitud y amplitud) en unidades de código, la detección de partes inestables del código fuente en donde es necesario el desarrollo de una refactorización o una mejor documentación del mismo (Mohamed, Fitriyah, Sulaiman, Rohana, & Endut, 2013). Por otro lado, la idea es obtener la métrica con el valor más bajo posible para que el riesgo de modificar dicho código fuente sea menor, asimismo, será mucho más entendible y mantenible para los desarrolladores (Herbold, Grabowski, & Waack, 2011).
+Su utilidad se puede observar en escenarios tales como la estimación de los esfuerzos requeridos para el desarrollo de pruebas unitarias (longitud y amplitud) en unidades de código y la detección de partes inestables del código fuente en donde es necesario el desarrollo de una refactorización o una mejor documentación del mismo (Mohamed, Fitriyah, Sulaiman, Rohana, & Endut, 2013). Por otro lado, la idea es obtener la métrica con el valor más bajo posible para que el riesgo de modificar dicho código fuente sea menor, asimismo, será mucho más entendible y mantenible para los desarrolladores (Herbold, Grabowski, & Waack, 2011).
 #### **Ejemplo**
 ```typescript
-/*Aquí va el ejemplo.*/
+let f = (b : number, c : number) => {
+  let a : number = 10
+  if (b > c) {
+    a = b
+  }
+  else {
+    a = c
+  }
+  console.log(a, b, c)
+}
 ```
+![Image 1](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/abc-1.png)  
+La complejidad ciclomática para el código anterior se obtiene a través del gráfico de flujo de control, en donde se observan 7 lados o aristas y 7 nodos o vértices, por lo que el valor de la métrica es: **7 - 7 + 2 = 2**.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+La utilización de la métrica en el proyecto de software es adecuada debido a que ayudará a encontrar porciones inconsistentes del programa, en donde se requerirá refactorizar para que los mismos sean mucho más entendibles y mantenibles, asimismo, se reducirán sus riesgos asociados con respecto a su modificación en el tiempo.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
