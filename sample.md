@@ -30,37 +30,28 @@ Aquí va eso.
 
 ## Métricas de Sofwtare
 
-### **Métrica 1: Timer**
+### **Métrica 1: Complejidad Ciclomática**
 #### **Descripción**
-Se enfoca en medir la duración de un tipo de evento, su tasa de ocurrencia y proporciona
-estadísticas de duración.
+Se enfoca en medir la complejidad de una estructura de código a través de un gráfico de flujo de control,
+el cual se desarrolla sobre la base del mismo programa, con la finalidad de cuantificar el número de 
+rutas linealmente independientes (Tiwari & Kumar, 2014). Por lo tanto, la fórmula de la complejidad 
+ciclomática de un gráfico G con "e" lados o aristas, "n" vértices o nodos y "p" componentes conectados 
+es: **V(G) = e - n + 2p**, en donde 2 es el resultado de agregar un lado extra desde el nodo de salida 
+al nodo de cada gráfico del módulo de componentes (Henderson-Sellers & Tegarden, 1994).
+
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Por ejemplo, la utilidad de la métrica se puede observar en escenarios tales como el seguimiento 
-del tiempo en que se tarda en ejecutar una consulta SQL, una petición HTTP, un método o función en 
-particular.
+Su utilidad se puede observar en escenarios tales como la estimación de los esfuerzos requeridos para el 
+desarrollo de pruebas unitarias (longitud y amplitud) en unidades de código, la detección de partes inestables 
+del código fuente en donde es necesario el desarrollo de una refactorización o una mejor documentación del 
+mismo (Mohamed, Fitriyah, Sulaiman, Rohana, & Endut, 2013). Por otro lado, la idea es obtener la métrica con el 
+valor más bajo posible para que el riesgo de modificar dicho código fuente sea menor, asimismo, será mucho más 
+entendible y mantenible para los desarrolladores (Herbold, Grabowski, & Waack, 2011).
 #### **Ejemplo**
 ```typescript
-/*la métrica Timer se puede utilizar de 2 formas*/
-/*pasando una acción en el método Time*/
-let requestTimer = new TimerOptions {
-  Name = 'Request Timer',
-  MeasurementUnit = Unit.Requests,
-  DurationUnit = TimeUnit.Milliseconds,
-  RateUnit = TimeUnit.Milliseconds
-}
-_metrics.Measure.Timer.Time(requestTimer, () => PerformRequest())
-
-/*utilizando una declaración using, en donde la métrica Timer finalizará la grabación
-al desecharla*/
-using(_metrics.Measure.Timer.Time(requestTimer)) {
-  PerformRequest()
-}
+/*Aquí va el ejemplo.*/
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-La métrica Timer es adecuada para su utilización en el proyecto de software, ya que gracias a ella 
-se puede dar a conocer cuánto es la duración, así como la tasa ocurrencia de las consultas que se 
-realizan a la base de datos Atlas MongoDB a través de la librería Mongoose,  la cual se implementa en 
-el archivo connection con extensión de typescript.
+Aquí va eso.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
@@ -275,6 +266,7 @@ Aquí van las conclusiones.
 
 ## Referencias
 
-- Aquí va la referencia 1
-- Aquí va la referencia 2
-- Aquí va la referencia 3
+- Herbold, S., Grabowski, J., & Waack, S. (2011). *Calculation and optimization of thresholds for sets of software metrics.* 812–841. https://doi.org/10.1007/s10664-011-9162-z  
+- Henderson-Sellers, B. & Tegarden, D. (1994). *The theoretical extension of two versions of cyclomatic complexity to multiple entrylexit modules.* Software Quality Control. 3. 253-269. https://doi.org/10.1007/BF00403560  
+- Mohamed, N., Fitriyah, R., Sulaiman, R., Rohana, W., & Endut, W. (2013). *The Use of Cyclomatic Complexity Metrics in Programming Performance ’ s Assessment.* Procedia - Social and Behavioral Sciences, 90(InCULT 2012), 497–503. https://doi.org/10.1016/j.sbspro.2013.07.119  
+- Tiwari, U., & Kumar, S. (2014). *Cyclomatic complexity metric for component based software.* ACM SIGSOFT Software Engineering Notes, 39(1), 1–6. https://doi.org/10.1145/2557833.2557853  
