@@ -37,7 +37,7 @@ Se enfoca en medir la complejidad de una estructura de código a través de un g
 Su utilidad se puede observar en escenarios tales como la estimación de los esfuerzos requeridos para el desarrollo de pruebas unitarias (longitud y amplitud) en unidades de código y en la detección de partes inestables del código fuente en donde es necesario el desarrollo de una refactorización o una mejor documentación del mismo (Mohamed, Fitriyah, Sulaiman, Rohana, & Endut, 2013). Por otro lado, la idea es obtener la métrica con el valor más bajo posible para que el riesgo de modificar dicho código fuente sea menor y, por ende, mucho más entendible y mantenible para los desarrolladores (Herbold, Grabowski, & Waack, 2011).
 #### **Ejemplo**
 ![Image 1](https://www.researchgate.net/profile/Seifedine_Kadry/publication/288695710/figure/fig3/AS:323620028076034@1454168435561/Control-Flow-Graph-where-the-Cyclomatic-Complexity-of-McCabe-is-Calculated.png)  
-**Figura 1:** (Madi, Zein & Kadry, 2013)  
+**Figura 1:** Complejidad Ciclomática (Madi, Zein & Kadry, 2013)  
 La complejidad ciclomática para el código anterior se obtiene a través del gráfico de flujo de control, en donde se observan 14 lados o aristas y 11 nodos o vértices, por lo que el valor de la métrica es: **14 - 11 + 2 = 5**.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 La utilización de la métrica en el proyecto de software es adecuada debido a que ayudará a encontrar porciones inconsistentes del programa, en donde se requerirá refactorizar para que los mismos sean mucho más entendibles y mantenibles, asimismo, se reducirán sus riesgos asociados con respecto a su modificación en el tiempo.
@@ -55,10 +55,9 @@ console.log(complexity) /*imprime el cálculo en pantalla*/
 
 ### **Métrica 2: Complejidad de Halstead**
 #### **Descripción**
-Acción que devuelve la medida instantanea de un valor, en donde dicho valor aumenta y disminuye 
-arbitrariamente.
+Se basa en calcular la complejidad de un módulo de programa a través del conteo de operadores y operandos desde el mismo código fuente, asimismo, cabe resaltar que Halstead proporciona varios indicadores que se enfocan en distintos aspectos de la complejidad del software (Yu & Zhou, 2010). Sin embargo, se realizará un mayor énfasis en la medida del esfuerzo, el cual es conocido como aquello que se necesita para producir una porción de software, es decir, está métrica esta muy relacionada con la dificultad de entendimiento e implementación del código. Por lo tanto, la fórmula del esfuerzo de Halstead es: **E = (n1 * N2 * (N1 + N2) * log2(n1 + n2)) / 2 * n2**, en donde "n1" es el número de operadores únicos, "n2" es el número de operandos únicos, "N1" es la frecuencia total de operadores y "N2" es la frecuencia total de operandos (Love, Sheppard, Milliman, & Borst, 1979).
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Es ideal para cuantificar el uso actual de la memoria, cpu, temperatura, espacio en disco, etc.
+La medida se puede aplicar en contextos tales como la elaboración y comprensión de estructuras de código, en donde se requiere evaluar la calidad y claridad de los mismos, y en la comparación de programas de bajo nivel con programas equivalentes, pero de alto nivel (Shen, Conte, & Dunsmore, 1983). De igual forma, la finalidad es estimar de forma directa la dificultad de entendimiento e implementación que los desarrolladores requieren, debido a que la capacidad de mantenimiento debe ser una preocupación durante la etapa de desarrollo, a fin de que dichas porciones de código presenten una mejor calidad, un menor tiempo de desarrollo y una menor complejidad (De Silva, Kodagoda, & Perera, 2012).
 #### **Ejemplo**
 ```typescript
 let processPhysicalMemoryGauge = new GaugeOptions {
@@ -263,8 +262,12 @@ Aquí van las conclusiones.
 ---
 
 ## Referencias
+- De Silva, D. I., Kodagoda, N., & Perera, H. (2012). *Applicability of Three Complexity Metrics.* The International Conference on Advances in ICT for Emerging Regions, 82–88. https://doi.org/10.1109/icter.2012.6421409
 - Henderson-Sellers, B. & Tegarden, D. (1994). *The theoretical extension of two versions of cyclomatic complexity to multiple entrylexit modules.* Software Quality Control. 3. 253-269. https://doi.org/10.1007/BF00403560
 - Herbold, S., Grabowski, J., & Waack, S. (2011). *Calculation and optimization of thresholds for sets of software metrics.* 812–841. https://doi.org/10.1007/s10664-011-9162-z
+- Love, T., Sheppard, S. B., Milliman, P., & Borst, M. A. (1979). *Measuring the Psychological Complexity of Software Maintenance Tasks with the Halstead and McCabe Metrics.* IEEE Transactions on Software Engineering, SE-5(2), 96–104. https://doi.org/10.1109/TSE.1979.234165
 - Madi, A., Zein, O.K., & Kadry, S. (2013). *On the improvement of cyclomatic complexity metric.* International Journal of Software Engineering and its Applications. 7. 67-82. 
 - Mohamed, N., Fitriyah, R., Sulaiman, R., Rohana, W., & Endut, W. (2013). *The Use of Cyclomatic Complexity Metrics in Programming Performance ’ s Assessment.* Procedia - Social and Behavioral Sciences, 90(InCULT 2012), 497–503. https://doi.org/10.1016/j.sbspro.2013.07.119
+- Shen, V. Y., Conte, S. D., & Dunsmore, H. E. (1983). *Software Science Revisited: A Critical Analysis of the Theory and Its Empirical Support.* IEEE Transactions on Software Engineering, SE-9(2), 155–165. https://doi.org/10.1109/TSE.1983.236460
 - Tiwari, U., & Kumar, S. (2014). *Cyclomatic complexity metric for component based software.* ACM SIGSOFT Software Engineering Notes, 39(1), 1–6. https://doi.org/10.1145/2557833.2557853
+- Yu, S., & Zhou, S. (2010). *A Survey on Metric of Software.* 2nd IEEE Proceedings of International Conference on Information Management and Engineering (ICIME), 253–356. https://doi.org/10.1109/icime.2010.5477581
