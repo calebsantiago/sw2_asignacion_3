@@ -24,11 +24,20 @@ Aquí va la introducción.
 
 ## Explicación del concepto de las métricas de software así como su relación con la ingeniería de software
 
-Aquí va eso. 
+La ingeniería de software es una disciplina para el desarrollo de software que combina métodos para todas las etapas de la elaboración del mismo, herramientas para automatizar dichos métodos, bloques de construcción potentes, técnicas que garantizan la calidad del software y una filosofía predominante para la coordinación, control y administración. Por otro lado, la calidad de software se define como la concordancia entre los requisitos funcionales y de rendimiento explícitamente establecidos, con los estándares de desarrollo explícitamente documentados y con las características implícitas que se esperan de todo software desarrollado profesionalmente (Pressman, 2002).
+
+Por lo tanto, la medición es fundamental para la disciplina de la ingeniería de software, es por ello que existen varias razones (Sommerville, 2005): 
+- Indica la calidad del producto.
+- Evalúa la productividad de los desarrolladores que elaboran el producto.
+- Evalúa los beneficios del uso de nuevos métodos y herramientas de la ingeniería de software.
+- Establece una línea base para la estimación.
+- Ayuda a justificar el uso de nuevas herramientas o de formación adicional.
+
+Asimismo, los factores que afectan la calidad de software se clasifican en dos categorías: métricas cualitativas, como aquellas que miden el software de manera indirecta o subjetiva, y métricas cuantitativas, como aquellas que miden el software de manera directa u objetiva. Por esta razón, existen muchos factores que afectan el desarrollo de un producto de software, entre estos se incluyen el tipo de programa a desarrollar, el tamaño del mismo, el lenguaje de implementación, la experiencia de los desarrolladores, las técnicas de programación y el ambiente computacional (Pressman, 2002).
 
 ---
 
-## Métricas de Sofwtare
+## Métricas de Software
 
 ### **Métrica 1: Complejidad Ciclomática**
 #### **Descripción**
@@ -262,6 +271,8 @@ Aquí van las conclusiones.
 - Love, T., Sheppard, S. B., Milliman, P., & Borst, M. A. (1979). *Measuring the Psychological Complexity of Software Maintenance Tasks with the Halstead and McCabe Metrics.* IEEE Transactions on Software Engineering, SE-5(2), 96–104. https://doi.org/10.1109/TSE.1979.234165
 - Madi, A., Zein, O.K., & Kadry, S. (2013). *On the improvement of cyclomatic complexity metric.* International Journal of Software Engineering and its Applications. 7. 67-82. 
 - Mohamed, N., Fitriyah, R., Sulaiman, R., Rohana, W., & Endut, W. (2013). *The Use of Cyclomatic Complexity Metrics in Programming Performance ’ s Assessment.* Procedia - Social and Behavioral Sciences, 90(InCULT 2012), 497–503. https://doi.org/10.1016/j.sbspro.2013.07.119
+- Pressman, R.S., (2002). *Ingeniería del Software: Un Enfoque Practico.* (5ta. Edición). Madrid: McGraw-Hill Interamericana.
 - Shen, V. Y., Conte, S. D., & Dunsmore, H. E. (1983). *Software Science Revisited: A Critical Analysis of the Theory and Its Empirical Support.* IEEE Transactions on Software Engineering, SE-9(2), 155–165. https://doi.org/10.1109/TSE.1983.236460
+- Sommerville, I., (2005). *Ingeniería del Software.* (7ma. Edición). Madrid: Addison-Wesley.
 - Tiwari, U., & Kumar, S. (2014). *Cyclomatic complexity metric for component based software.* ACM SIGSOFT Software Engineering Notes, 39(1), 1–6. https://doi.org/10.1145/2557833.2557853
 - Yu, S., & Zhou, S. (2010). *A Survey on Metric of Software.* 2nd IEEE Proceedings of International Conference on Information Management and Engineering (ICIME), 253–356. https://doi.org/10.1109/icime.2010.5477581
