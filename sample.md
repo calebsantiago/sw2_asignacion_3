@@ -46,7 +46,7 @@ La utilización de la métrica en el proyecto de software es adecuada debido a q
 /*ejecutar el comando 'npm install ts-complex --save' en cmd*/
 const tscomplex = require('ts-complex') /*invoca a la librería ts-complex*/
 const path = './app.ts' /*ruta del archivo con extensión typescript*/
-const complexity = tscomplex.calculateCyclomaticComplexity(path) /*calcula la complejidad ciclomática del archivo*/
+const complexity = tscomplex.calculateCyclomaticComplexity(path) /*calcula la complejidad ciclomática*/
 console.log(complexity) /*imprime el cálculo en pantalla*/
 /*se obtuvo el resultado de 2.22 como valor promedio debido a la independencia de las funciones*/
 ```
