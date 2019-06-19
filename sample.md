@@ -63,9 +63,7 @@ La medida se puede aplicar en contextos tales como la elaboración y comprensió
 **Figura 2:** Complejidad de Halstead (Madi, Zein & Kadry, 2013)  
 El esfuerzo de Halstead para el código anterior se obtiene a través del conteo de operadores y operandos, en donde se observan 17 operadores, 7 operandos, 50 repeticiones del total de operadores y 30 repeticiones del total de operandos, por lo que el valor de la métrica es: **(17 * 30 * (50 + 30) * log2(17 + 7)) / 2 * 7 = 13361.89**.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-La implementación de la métrica es adecuado para dar a conocer el rendimiento de los
-componentes del nodo Heroku tales como memoria, cpu y espacio en disco frente a las solicitudes
-HTTP e invocaciones de métodos tanto del lado back end como front end.
+El manejo de la métrica en el proyecto de software es apropiado, debido a que ayudará a estimar la dificultad de implementación y entendimiento en ciertas porciones de código, con el propósito de desarrollar un programa mantenible en el tiempo, en otras palabras, de alta calidad y de menor complejidad.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*ejecutar el comando 'npm install ts-complex --save' en cmd*/
