@@ -73,6 +73,7 @@ const tscomplex = require('ts-complex') /*invoca a la librería ts-complex*/
 const path = './app.ts' /*ruta del archivo con extensión typescript*/
 const complexity = tscomplex.calculateHalstead(path) /*calcula la complejidad de halstead*/
 console.log(complexity) /*imprime el cálculo en pantalla*/
+/*se obtuvo el resultado de 10071.70 como valor promedio debido a la independencia de las funciones*/
 ```
 
 ---
