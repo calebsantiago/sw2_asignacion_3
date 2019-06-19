@@ -53,7 +53,7 @@ console.log(complexity) /*imprime el cálculo en pantalla*/
 
 ---
 
-### **Métrica 2: Gauge**
+### **Métrica 2: Complejidad de Halstead**
 #### **Descripción**
 Acción que devuelve la medida instantanea de un valor, en donde dicho valor aumenta y disminuye 
 arbitrariamente.
@@ -69,12 +69,16 @@ let process = Process.GetCurrentProcess()
 _metrics.Measure.Gauge.SetValue(MetricsRegistry.Gauges.TestGauge, process.WorkingSet64)
 ```
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-La implementación de la métrica Gauge es adecuado para dar a conocer el rendimiento de los
+La implementación de la métrica es adecuado para dar a conocer el rendimiento de los
 componentes del nodo Heroku tales como memoria, cpu y espacio en disco frente a las solicitudes
 HTTP e invocaciones de métodos tanto del lado back end como front end.
 #### **Aplicación al proyecto de software**
 ```typescript
-/*Aquí va la aplicación.*/
+/*ejecutar el comando 'npm install ts-complex --save' en cmd*/
+const tscomplex = require('ts-complex') /*invoca a la librería ts-complex*/
+const path = './app.ts' /*ruta del archivo con extensión typescript*/
+const complexity = tscomplex.calculateHalstead(path) /*calcula la complejidad de halstead*/
+console.log(complexity) /*imprime el cálculo en pantalla*/
 ```
 
 ---
