@@ -59,14 +59,9 @@ Se basa en calcular la complejidad de un módulo de programa a través del conte
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
 La medida se puede aplicar en contextos tales como la elaboración y comprensión de estructuras de código, en donde se requiere evaluar la calidad y claridad de los mismos, y en la comparación de programas de bajo nivel con programas equivalentes, pero de alto nivel (Shen, Conte, & Dunsmore, 1983). De igual forma, la finalidad es estimar de forma directa la dificultad de entendimiento e implementación que los desarrolladores requieren, debido a que la capacidad de mantenimiento debe ser una preocupación durante la etapa de desarrollo, a fin de que dichas porciones de código presenten una mejor calidad, un menor tiempo de desarrollo y una menor complejidad (De Silva, Kodagoda, & Perera, 2012).
 #### **Ejemplo**
-```typescript
-let processPhysicalMemoryGauge = new GaugeOptions {
-  Name = "Process Physical Memory",
-  MeasurementUnit = Unit.Bytes
-}
-let process = Process.GetCurrentProcess()
-_metrics.Measure.Gauge.SetValue(MetricsRegistry.Gauges.TestGauge, process.WorkingSet64)
-```
+![Image 2](https://www.researchgate.net/profile/Seifedine_Kadry/publication/288695710/figure/fig1/AS:323620028076032@1454168435508/Example-of-C-alculation-of-Halsteads-Indices.png)  
+**Figura 2:** Complejidad de Halstead (Madi, Zein & Kadry, 2013)  
+El esfuerzo de Halstead para el código anterior se obtiene a través del conteo de operadores y operandos, en donde se observan 17 operadores, 7 operandos, 50 repeticiones del total de operadores y 30 repeticiones del total de operandos, por lo que el valor de la métrica es: **(17 * 30 * (50 + 30) * log2(17 + 7)) / 2 * 7 = 13361.89**.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 La implementación de la métrica es adecuado para dar a conocer el rendimiento de los
 componentes del nodo Heroku tales como memoria, cpu y espacio en disco frente a las solicitudes
