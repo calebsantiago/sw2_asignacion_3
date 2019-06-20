@@ -84,6 +84,102 @@ console.log(complexity) /*imprime el cálculo en pantalla*/
 ```
 
 ---
+### **Métrica 3: Mantenibilidad**
+#### **Descripción**
+Hace referencia a la facilidad con la que se puede mantener un sistema. Es un atributo interno del sistema que no puede medirse directamente. En lugar de ello, se pueden medir atributos del proceso de mantenimiento, tales como el tiempo necesario para realizar un cambio, el cual está influenciado por la capacidad de mantenimiento del software (Frappier, Matwin, & Mili, 1994).
+Fórmula = 171-5.2In(HV)-0.23CC-16.2In(LOC)+50.0sin√2.46*COM 
+HV:Halstead
+LOC : Líneas de código
+COM : porcentaje de comentarios
+
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+La mantenibilidad es importante en todo software hoy en dia, el grado de mantenibilidad está asociado al grado de calidad del software, ya que un software demasiado complejo a nivel de mantenimiento no sería el adecuado ya que no sería fácilmente modificable o reusable. Así mismo, según Herbold: La mantenibilidad se asocia a otros conceptos claves en el desarrollo del software los cuales son el grado de testeabilidad, comprensibilidad , extensibilidad de manera que si cumplen estas características satisfactoriamente se podría decir que el software será mantenible y en consecuencia la detección como la corrección de errores será rápida y eficiente, además de proporcionar otras ventajas (Informática & Ciencias, 2013).
+#### **Ejemplo**
+
+```typescript
+public static String Sha1(String plainText)
+{
+  using (SHA1Managed sha1=new SHA1Managed())
+  {
+    Byte[] text=Encoding.Unicode.GetBytes(plainText);
+    Byte[] hashBytes=sha1.ComputeHash(text);
+    return Convert.ToBase64String(hashBytes);
+   }
+}
+
+public static String Sha1(String plainText)
+{
+  Byte[] text, hashBytes;
+  using (SHA1Managed sha1=new SHA1Managed())
+  {
+    text=Encoding.Unicode.GetBytes(plainText);
+    hashBytes=sha1.ComputeHash(text);
+  }
+  return Convert.ToBase64String(hashBytes);
+}
+El índice de mantenibilidad (MI) para el primer ejemplo es de 71 mientras que con la aplicación de técnicas de refactorización, se observa que el valor de mantenibilidad aumenta en 2 puntos en general dicho código posee una buena mantenibilidad al encontrarse en el rango de 20-100.
+*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+La aplicación de la métrica descrita es viable de implementar en nuestro proyecto de software debido a que nos permitirá conocer cuan mantenible es nuestro proyecto, de forma que podremos tener una retroalimentación de qué aspectos mejorar para futuros trabajos en base a este.
+
+
+#### **Aplicación al proyecto de software**
+```typescript
+/*const tscomplex = require('ts-complex'); //adquiere la libreria ts-complex para posteriomente realizar el calculo
+const path = './app.ts'; // accede a la ruta del archivo a evaluar 
+const maintainability = tscomplex.calculateMaintainability(path); //calcula la mantenibilidad del software
+console.log(maintainability);  // imprime valores de mantenibilidad del proyecto 
+*/
+```
+
+
+---
+### **Métrica 3: Core Size**
+#### **Descripción**
+ace referencia al porcentaje de módulos que dependen en gran medida de otros módulos y que a su vez dependen de ellos mismos. Este valor es asociado a que a menor porcentaje mejor métrica.
+
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+utilización?
+Conocer el porcentaje de módulos que poseen dependencias es importante para tener conocimiento del grado de acoplamiento que posee el software, de manera que la meta en todo buen software es que posea una alta cohesión y un bajo acoplamiento de esta manera conocer dicha métrica será relevante al poder implementar las medidas correctivas y nuestro software sea mucho mas tolerante a fallos. Los beneficios de de su utilización será relevantes para disminuir tasa de errores, mejorar la mantenibilidad, etc. 
+#### **Ejemplo**
+
+```typescript
+calculateCoreSize(projectReport, visibilityMatrix)  {
+     if (projectReport.firstOrderDensity === 0)     {
+        projectReport.coreSize = 0;
+        return;
+     }
+      const length = visibilityMatrix.length;
+      const fanIn = new Array(length);
+     const fanOut = new Array(length);
+     let coreSize = 0;
+ 
+     for (let rowIndex = 0; rowIndex < length; rowIndex++)     {
+        fanIn[rowIndex] = visibilityMatrix[rowIndex].reduce((sum,value,valueIndex) =>
+        {
+fanOut[valueIndex] = rowIndex === 0 ? value :fanOut[valueIndex]+ value;
+           return sum + value;
+       }, 0);
+     }
+Considerar que mientras mas bajo sea el valor mejor, viceversa.
+
+*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Efectivamente la aplicación de esta métrica en nuestro de proyecto de software será de gran ayuda para conocer qué tan acoplados se encuentran nuestras clases y en proyectos futuros aplicar técnicas para reducir este acoplamiento de manera que en caso de algún error en alguno de los módulos del software no presente grandes inconvenientes en módulos que ahora se puedan encontrar acoplados a ellos.
+
+
+
+#### **Aplicación al proyecto de software**
+```typescript
+/*const escomplex = require('escomplex');
+const result = escomplex.analyse('./app.ts', options);
+const CoreSize = true;
+escomplex.processResults(result.coreSize, CoreSize);
+*/
+```
+---
 
 ### **Métrica 3: Counter**
 #### **Descripción**
@@ -276,3 +372,6 @@ Aquí van las conclusiones.
 - Sommerville, I., (2005). *Ingeniería del Software.* (7ma. Edición). Madrid: Addison-Wesley.
 - Tiwari, U., & Kumar, S. (2014). *Cyclomatic complexity metric for component based software.* ACM SIGSOFT Software Engineering Notes, 39(1), 1–6. https://doi.org/10.1145/2557833.2557853
 - Yu, S., & Zhou, S. (2010). *A Survey on Metric of Software.* 2nd IEEE Proceedings of International Conference on Information Management and Engineering (ICIME), 253–356. https://doi.org/10.1109/icime.2010.5477581
+- Frappier, M., Matwin, S., & Mili, A. (1994). Software Metrics for Predicting Maintainability. Journal Of Software Maintenance Research   And Practice, 3(3), 129–143. Retrieved from http://www3.interscience.wiley.com/journal/113445994/abstract
+- Informática, D. De, & Ciencias, F. De. (2013). open source utilizando métricas de orientación a objetos. 15–29.
+
