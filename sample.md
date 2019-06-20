@@ -139,11 +139,11 @@ Es viable identificar la cantidad de solicitudes de cotización en un periodo de
 
 ---
 
-### **Métrica 5: Aquí va el título**
+### **Métrica 5: Lack of Cohesion of Methods**
 #### **Descripción**
-Aquí va la descripción.
+La falta de cohesión en los métodos (LCOM), esta métrica se encarga de medir la correlación entre los métodos y las variables de instancia local de una clase. Si existe muy baja cohesión se aumenta la complejidad del software, por el contrario una alta cohesión garantiza una buena subdivisión de la clase. Las clases que presentan baja cohesión pueden ser divididas en dos o más subclases que tengan una cohesión mayor.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Aplicado donde no existen atributos de instancia para cada clase, esto quiere decir que todas las variables son heredadas de una clase superior (superclase). También existe el caso de haber definido instancias de clase, pero estas no tienen ninguna referencia. 
 #### **Ejemplo**
 ```typescript
 /*Aquí va el ejemplo.*/
@@ -157,7 +157,7 @@ Aquí va eso.
 
 ---
 
-### **Métrica 6: Aquí va el título**
+### **Métrica 6: Métrica de Elshof or something**
 #### **Descripción**
 Aquí va la descripción.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
