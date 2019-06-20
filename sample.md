@@ -18,7 +18,7 @@ Aquí va el abstract.
 
 ## Introducción
 
-Aquí va la introducción.
+El desarrollo de software engloba una gran cantidad de tareas que son necesarias, sin embargo para conocer si nuestro software fue el mas óptimo podemos comprobarlo mediante la aplicación de una serie de métricas que pueda darnos un diagnóstico de qué tan adecuado fue nuestro desarrollo o no, es por ello que realizar una correcta parametrización y análisis es imprescindible para comprender las métricas que deseamos calcular, es respecto a estas métricas que deseamos calcular, las que nos permitirán compararnos que tan bien hemos implementado nuestro software y si es necesario aplicar métodos de refactorización para mejorar nuestro programa. Para ello mediante el presente artículo buscamos dar a conocer métricas, así mismo como una ejemplificación de ellas y la relevancia que estas tienen para el desarrollo del software.
 
 ---
 
