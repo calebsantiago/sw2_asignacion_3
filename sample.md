@@ -12,7 +12,7 @@
 
 ## Abstract
 
-The advances in software evolve every day more and more, this due to the great amount of resources that appear day by day; nevertheless, it is no longer enough to develop software that only fulfills requested requirements, but to implement softawre with peculiarities that allow to make an easy maintenance, to add new modules of fast form, that is scalable, efficient, etc. For it is essential to know the metrics that this development has, so that it provides us with a vision of the quality, performance, extensibility, etc. Therefore, this research article is oriented to offer several useful metrics to know how good was our software development and what action we can cover to improve our coding.
+The advances in software evolve every day more and more, this due to the great amount of resources that appear day by day; nevertheless, it is no longer enough to develop software that only fulfills requested requirements, but to implement software with peculiarities that allow to make an easy maintenance, to add new modules of fast form, that is scalable, efficient, etc. For it is essential to know the metrics that this development has, so that it provides us with a vision of the quality, performance, extensibility, etc. Therefore, this research article is oriented to offer several useful metrics to know how good was our software development and what action we can cover to improve our coding.
 
 ---
 
