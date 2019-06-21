@@ -384,12 +384,14 @@ Aquí va eso.
 
 ---
 
-### **Métrica 10: Aquí va el título**
+### **Métrica 10: Duplicated Code**
 #### **Descripción**
 Aquí va la descripción.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
 Aquí va eso.
 #### **Ejemplo**
+![Image 2]
+(https://image.slidesharecdn.com/codecraftsmanship-13426395586098-phpapp01-120719032401-phpapp01/95/code-craftsmanship-39-728.jpg?cb=1342668682)  
 ```typescript
 /*Aquí va el ejemplo.*/
 ```
