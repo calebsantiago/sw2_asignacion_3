@@ -268,7 +268,7 @@ public class NonCohesiveNumberManipulator
 ```
 En el último ejemplo existen tres variables locales, las cuales se comunican con un método exclusivo para cada una. Por lo que se puede dar la pregunta si en realidad hay comunicación dentro de esta clase.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+La métrica es totalmente viable para su aplicación en proyectos de software, dado que es importante conocer la cohesión entre las clases de dicho software.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
