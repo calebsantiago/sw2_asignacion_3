@@ -386,15 +386,30 @@ Aquí va eso.
 
 ### **Métrica 10: Duplicated Code**
 #### **Descripción**
-Aquí va la descripción.
+Duplicated Code se da cuando se produce una copia y adaptación de un codigo ya existente, normalmente es implementado cuando se quiere reusar software. Duplicated Code es utilizado debido a que disminuye el tiempo de desarrollo, mejora la confiabilidad, evita malograr el código, etc. Aún asi, Duplicated Code trae problemas como generar un código más extenso, genera mayor esfuerzo a los trabajadores debido que tienen que ser más cautelosos al momento de cambiar las intancias clonadas y representa un desafio al momento de mantener el software.
+
+
+-https://pdfs.semanticscholar.org/31ab/b819a2a35c6e81cad768652519139c6c5c00.pdf?_ga=2.113482703.939195665.1561124913-1521911413.1561124913
+
+
+
+-https://wettel.github.io/download/wettel05-synasc.pdf
+
+
+-https://pdfs.semanticscholar.org/f62f/3a86c086ade81fce21c804b817bc6cc28d81.pdf?_ga=2.193350317.1666261657.1561124913-638334179.1561124913
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta métrica sirve para tener noción de la mantenibilidad del código, además que al usar codigo duplicado disminuye la escalabilidad de un software. Al saber que cantidad de código clonado tenemos, podemos disminuirlo y evitar las consecuencias que trae este.
 #### **Ejemplo**
 ![Ejemplo10](https://image.slidesharecdn.com/codecraftsmanship-13426395586098-phpapp01-120719032401-phpapp01/95/code-craftsmanship-39-728.jpg?cb=1342668682)
-**Figura Ejemplo10:** Duplicate Code Example (Prokarma, 2012) 
+
+
+**Figura Ejemplo10:** Duplicate Code Example (Prokarma, 2012)
+
+
+En el ejemplo podemos ver que la estructura es identica y el cambio se da en el nombre de la función.
 
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Si, debido a que un proyecto de software debe ser escalable y fácil de mantener. Saber que cantidad de código es clonado en nuestro proyecto no ayudaria a dismuirlo e implementar un mejor diseño de sofware.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
@@ -405,17 +420,6 @@ Aquí va eso.
 ## Conclusiones
 
 Aquí van las conclusiones.
-
----
-
-## Rúbrica
-
-| Criterio | Sobresaliente | Aceptable | Deficiente |
-|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1.Clasificación de fuentes | El alumno presenta una adecuada clasificación de los temas recopilados, considerando las áreas y sub áreas del tema escogido. (5 ptos.)   | Existen cierta información que no guarda una relación directa con el tema analizado. (4-3 ptos.)  | Las fuentes bibliográficas son dispersas y no guardan relación con el tema escogido. (1-2 ptos.)  |
-| 2.Material relevante obtenido de fuentes confiables | La información obtenida es de alta calidad dada por: conferencias o journals de la especialidad y de alto impacto. Clasificación del material obtenido de journals q1-q2. (5 ptos.)  | Alguna de la información recopilada proviene de fuentes de dudosa procedencia. Se ha centrado en journals q3-q4 o en congresos de la especialidad de bajo impacto. (4-3 ptos.) | El material recopilado ha sido obtenido de fuentes de bajo nivel, en algunos casos se presume que proviene de journals o conferencias clasificadas como depredadoras. (1-2 ptos.) |
-| 3.Utilización del formato APA u otro formato de referencia | Se ha utilizado de forma adecuada el formato APA, Vancouver o Harvard, con sus respectivas variantes aceptadas. Esto incluye la referencia a todo nivel: texto y figuras. (5 ptos.) | Se presentan ciertas fallas, menos al 30% de referencias utilizadas de forma errónea o material no referenciado, al interior del artículo. (4-3 ptos.)  | No se ha utilizado el formato de referencia adecuado o se ha usado combinación entre varios formatos. Existen diversas partes sin referenciar al interior del artículo. (1-2 ptos.)  |
-| 4.Síntesis adecuada de la información recopilada  | Se han tomado aproximadamente más de 5 artículos para la elaboración de su artículo. Información relevante ha sido obtenida de cada uno de ellos, sintetizando de forma adecuada el aporte de cada uno de ellos. (5 ptos.)     | El número de referencias tomadas para el artículo ha sido entre 3 y <5 artículos. Algunos artículos no han sido adecuadament e resumidos o se presume que han sido colocados para llenar vacíos en su artículo. (4-3 ptos.)      | La cantidad de artículos considerados ha sido < 3. La mayor parte de la información obtenida no es relevante o no está adecuadamente resumida. (1-2 ptos)   |
 
 ---
 
