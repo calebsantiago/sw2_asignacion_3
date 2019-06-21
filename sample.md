@@ -12,7 +12,7 @@
 
 ## Abstract
 
-Aquí va el abstract.
+The advances in software evolve every day more and more, this due to the great amount of resources that appear day by day; nevertheless, it is no longer enough to develop software that only fulfills requested requirements, but to implement softawre with peculiarities that allow to make an easy maintenance, to add new modules of fast form, that is scalable, efficient, etc. For it is essential to know the metrics that this development has, so that it provides us with a vision of the quality, performance, extensibility, etc. Therefore, this research article is oriented to offer several useful metrics to know how good was our software development and what action we can cover to improve our coding.
 
 ---
 
@@ -366,21 +366,42 @@ En nuestro proyecto de software tenemos 4 clases y 17 métodos por lo que nuestr
 
 ---
 
-### **Métrica 9: Aquí va el título**
+### **Métrica 9: Reliability**
 #### **Descripción**
-Aquí va la descripción.
+Reliability es una metrica importante en el desarrollo de software debido a que analiza la calidad del programa mediante factores individuales y colectivos. Esta métrica se enfoca en los defectos y errores del software. Mayor la probabilidad de ocurrencia de un defector en un sistema de software, menor es la confiabilidad del sistema de software (Aman Jatain, 2014). 
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta metrica se usaria debido a la incetidumbre sobre los errores que pueden ocurrir en tu software. Entre los diferentes parametros se encuentra la frecuencia al fallo, tipo de fallo, efecto de la ocurrencia del fallo, frecuencia de ejecución de módulos defectuosos, etc. Usar esta métrica disminuiria los costos, tiempo y recurso que se usan en un software desconfiable; además, al momento de insertar nuevo código se evitarian nuevos fallos y no se requerirá pruebas prolongadas en el sistema para tratarlos lo que ahorra tiempo en el desarrollo. Finalimente, podemos cuantificar la calidad del software y brindar a los desarrolladores una mejor comprensión del proceso de desarrollo.
 #### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
+```C
+int errores (int input)
+{
+    int x,y,k,1;
+    k = input/100;
+    x=2;
+    y= k + 5;
+    if ((3*k+100)> 43)
+    {
+        y++;
+        x = x / (x- y);
+    }
+
+    return x;
+}
 ```
+
+
+Un bugg que podriamos encontrar en el código anterior seria que "x" y "y" serían igual, esto ocacionaria que sea una división a 0 lo cual generaria un error en el programa.
+
+
+-https://www.researchgate.net/publication/236845436_Metrics_models_and_measurements_in_software_reliability
+
+
+-https://www.researchgate.net/publication/269287977_Metrics_and_Models_for_Software_Reliability_A_Systematic_Review
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Si es viable en nuestro proyecto porque buscamos que sea confiable y no perder tanto tiempo en pruebas de errores.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+
+
 
 ---
 
