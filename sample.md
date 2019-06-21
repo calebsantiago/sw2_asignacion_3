@@ -278,15 +278,89 @@ La métrica es totalmente viable para su aplicación en proyectos de software, d
 
 ### **Métrica 6: Cognitive Complexity**
 #### **Descripción**
-Aquí va la descripción.
+Cognitive Complexity es una métrica que a diferencia de la Complejidad ciclómatica, es cuán fácil de entender es el código y por otra parte la complejidad ciclomática cuán difícil de probar es.Existen 3 reglas en las que se encuentra basada la Complejidad Cognitiva:
+- Ignorar la estructura que permite varias declaraciones se pueda leer de forma abreviada en una sola.
+- Incrementar para cada interrupción en el flujo de código
+- Incrementar cuando las estructuras que rompen el flujo están anidadas
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Puesto que el proceso de escritura y mantenimiento del código es un proceso humano, y pese a que las salidas de estos se adhieren a un modelo matemático. Por lo que la complejidad cognitiva rompe con el modelo de usar modelos matemáticos para el mantenimiento del software. Aunque se tenga como precedente la complejidad ciclomática se requiere de evaluación y criterio humano para decidir como deben contarse las estructuras y decidir que se debe añadir al modelo.
 #### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
+Ignorar taquigrafía:
+
+```C#
+MyObj myObj = null;
+if (a != null) {
+ myObj = a.myObj;
+}
 ```
+```C#
+MyObj myObj = a?.myObj;
+```
+El primer ejemplo tarda un poco más en pocesarce que el segundo, ya que en este último se comprende la sintaxis de unión nula. Es por este motivo que la complejidad cognitiva ignora los operadores de unión nula.
+
+Rupturas en el flujo lineal:
+
+Otro principio de la la complejidad cognitiva es que aquellas estructuras en las cuales el flujo lineal del código se ven afectadas por interrupciones de arriba a abajo, izquierda a derecha requieren de mayor esfuerzo. Esto sucede con:
+- Las estructulas de bucles: for, while, do while, etc.
+- Condicionales: if, else
+- Recursión
+
+```JavaScript
+function count(a, b, c) {
+  var total = 0;
+
+  total += a;
+  total += b;
+  total += c;
+  
+  return total;
+}
+```
+Flujo de código sin rupturas de arriba hacia abajo.
+```JavaScript
+function count(a, b, c) {
+  var total = 0;
+  var nums = [a, b, c];
+  
+  for (var i = 0; i < nums.length; i++) {
+    total += nums[i];
+  }
+  
+  return total;
+}
+```
+Código con rupturas de flujo.
+
+Anidamiento:
+
+Cuanto más anidado se encuentre el código más dificil será su procesamiento.
+
+```Java
+if (env.debugMode()) {
+  System.out.println("Hello, world!");
+}
+```
+Línea de código simple
+```Java
+while(theWorldTurns) {
+  if(isMorning) {
+    try {
+      if (env.debugMode()) {
+        System.out.println("Hello, world!");
+      }
+    } catch (BadDay e) {
+      System.out.println("Yikes!");
+    }
+  }
+}
+```
+En este caso el condicional agrega complejidad al código.
+La anidación sucede en:
+- Condicionales
+- Bucles
+- try/ catch  blocks
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Se considera la Complejidad Cognitiva como una métrica bastante útil para el entendimiento y complejidad del código, es útil para el análisis del código y la estructura del software.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
