@@ -498,7 +498,9 @@ Si, debido a que un proyecto de software debe ser escalable y fácil de mantener
 
 ## Conclusiones
 
-Aquí van las conclusiones.
+- Se puede concluir mediante este informe que las métricas ayudan a la revisión del progreso y retroalimentación del proyecto de software para el ajuste de futuros planes.
+- La mediciones son parte fundamental de la ingeniería del Software, por proveer información, en este caso cuantitativa.
+- La métricas tienen como objetivo ayudar a los desarrolladores a medir, administrar los cambios y la complejidad del software.
 
 ---
 
