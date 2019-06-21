@@ -391,12 +391,6 @@ int errores (int input)
 
 
 Un bugg que podriamos encontrar en el código anterior seria que "x" y "y" serían igual, esto ocacionaria que sea una división a 0 lo cual generaria un error en el programa.
-
-
--https://www.researchgate.net/publication/236845436_Metrics_models_and_measurements_in_software_reliability
-
-
--https://www.researchgate.net/publication/269287977_Metrics_and_Models_for_Software_Reliability_A_Systematic_Review
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 Si es viable en nuestro proyecto porque buscamos que sea confiable y no perder tanto tiempo en pruebas de errores.
 #### **Aplicación al proyecto de software**
@@ -408,16 +402,6 @@ Si es viable en nuestro proyecto porque buscamos que sea confiable y no perder t
 ### **Métrica 10: Duplicated Code**
 #### **Descripción**
 Duplicated Code se da cuando se produce una copia y adaptación de un codigo ya existente, normalmente es implementado cuando se quiere reusar software. Duplicated Code es utilizado debido a que disminuye el tiempo de desarrollo, mejora la confiabilidad, evita malograr el código, etc. Aún asi, Duplicated Code trae problemas como generar un código más extenso, genera mayor esfuerzo a los trabajadores debido que tienen que ser más cautelosos al momento de cambiar las intancias clonadas y representa un desafio al momento de mantener el software.
-
-
--https://pdfs.semanticscholar.org/31ab/b819a2a35c6e81cad768652519139c6c5c00.pdf?_ga=2.113482703.939195665.1561124913-1521911413.1561124913
-
-
-
--https://wettel.github.io/download/wettel05-synasc.pdf
-
-
--https://pdfs.semanticscholar.org/f62f/3a86c086ade81fce21c804b817bc6cc28d81.pdf?_ga=2.193350317.1666261657.1561124913-638334179.1561124913
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
 Esta métrica sirve para tener noción de la mantenibilidad del código, además que al usar codigo duplicado disminuye la escalabilidad de un software. Al saber que cantidad de código clonado tenemos, podemos disminuirlo y evitar las consecuencias que trae este.
 #### **Ejemplo**
@@ -462,4 +446,6 @@ Aquí van las conclusiones.
 - Arafati, O., & Riehle, D. (2009, May). The comment density of open source software code. In 2009 31st International Conference on Software Engineering-Companion Volume (pp. 195-198). IEEE.
 - Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
 - Farooq, Sheikh Umar & Quadri, SMK & Ahmad, Nurain. (2012). Metrics, models and measurements in software reliability. IEEE 10th Jubilee International Symposium on Applied Machine Intelligence and Informatics, SAMI 2012 - Proceedings. 441-449. 10.1109/SAMI.2012.6209008.
-- Jatain, Aman & mehta, Yukti. (2014). Metrics and Models for Software Reliability: A Systematic Review. 10.1109/ICICICT.2014.6781281. 
+- Jatain, Aman & mehta, Yukti. (2014). Metrics and Models for Software Reliability: A Systematic Review. 10.1109/ICICICT.2014.6781281.
+- Jiang, Z. M. (2006). Visualizing and understanding code duplication in large software systems (Master's thesis, University of Waterloo).
+- Hordijk, W., Ponisio, M. L., & Wieringa, R. (2009, April). Harmfulness of Code Duplication-A Structured Review of the Evidence. In EASE.
