@@ -461,3 +461,5 @@ Aquí van las conclusiones.
 - Lakshminarayana, A., & Newman, T. S. (1999). Principal component analysis of Lack of Cohesion in Methods (LCOM) metrics. Technical Report TRUAH-CS-1999-01. https://pdfs.semanticscholar.org/81f6/1e7225f2f89f6fe61df6d69ef65c1ecb87fd.pdf
 - Arafati, O., & Riehle, D. (2009, May). The comment density of open source software code. In 2009 31st International Conference on Software Engineering-Companion Volume (pp. 195-198). IEEE.
 -Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
+-Farooq, Sheikh Umar & Quadri, SMK & Ahmad, Nurain. (2012). Metrics, models and measurements in software reliability. IEEE 10th Jubilee International Symposium on Applied Machine Intelligence and Informatics, SAMI 2012 - Proceedings. 441-449. 10.1109/SAMI.2012.6209008.
+-Jatain, Aman & mehta, Yukti. (2014). Metrics and Models for Software Reliability: A Systematic Review. 10.1109/ICICICT.2014.6781281. 
