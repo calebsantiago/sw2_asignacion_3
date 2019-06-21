@@ -397,7 +397,9 @@ Tanto en proyectos de software en general como en nuestro proyecto la implementa
 ```
 https://api.codetabs.com/v1/loc?github=calebsantiago/sw2_app
 ```
-![Lineas de código](https://i.imgur.com/WDfO40Y.png)
+![Image 3: Lineas de código](https://i.imgur.com/WDfO40Y.png)
+
+**Figura 3:** Líneas de codigo en proyecto sw2_app por lenguaje.
 
 En nuestro proyecto las líneas de código están distribuidas como muestran la imagen superior. Ya que buena parte del código JSON y JavaScript es autogenerado se ha optado por obtener la métrica de densidad de comentarios tomando solo en cuenta las líneas de código en TypeScript. Nuestro proyecto tiene un total de 1255 lineas de código de TypreScript de las cuales 23 son líneas de comentarios por lo tanto nuestra densidad de comentarios es de (23/1255)*100 = 1.83%
 
@@ -435,7 +437,10 @@ En el presente ejemplo hay un total de 3 clases y 3 métodos por lo que el NOM p
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 En proyectos de software en general, consideramos que es viable para software con una base de código orientada a objetos, sin embargo, consideramos que no debe ser la única métrica de mantenibilidad ya que se fija únicamente en las clases y sus métodos. El NOM por clase es especialmente útil para analizar clases en específico ya que se puede segmentar las clases con un valor mínimo y máximo. En el caso de nuestro proyecto de software, es viable su utilización ya que utilizamos hacemos uso de varias clases. 
 #### **Aplicación al proyecto de software**
-![Diagrama de clases contacta](https://i.imgur.com/ihm6sv9.jpg)
+![Image 4:Diagrama de clases contacta](https://i.imgur.com/ihm6sv9.jpg)
+
+**Figura 4:** Diagrama de clases de proyecto sw2_app.
+
 En nuestro proyecto de software tenemos 4 clases y 17 métodos por lo que nuestro NOM promedio es de 17/4 = 4.25
 
 ---
@@ -482,7 +487,7 @@ Esta métrica sirve para tener noción de la mantenibilidad del código, además
 ![Ejemplo10](https://image.slidesharecdn.com/codecraftsmanship-13426395586098-phpapp01-120719032401-phpapp01/95/code-craftsmanship-39-728.jpg?cb=1342668682)
 
 
-**Figura Ejemplo10:** Duplicate Code Example (Prokarma, 2012)
+**Figura 5:** Duplicate Code Example (Prokarma, 2012)
 
 
 En el ejemplo podemos ver que la estructura es identica y el cambio se da en el nombre de la función.
