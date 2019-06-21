@@ -253,7 +253,7 @@ Aquí va eso.
 
 ---
 
-### **Métrica 6: Métrica de Elshof or something**
+### **Métrica 6: Cognitive Complexity**
 #### **Descripción**
 Aquí va la descripción.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
