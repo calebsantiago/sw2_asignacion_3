@@ -315,32 +315,54 @@ var disp = function () {
 };
 disp();
 ```
-En el anterior ejemplo hay un total de 5 líneas de código y 1 línea de comentario por lo que la densidad de comentario seria 1/5 = 20% .
+En el presente ejemplo hay un total de 5 líneas de código y 1 línea de comentario por lo que la densidad de comentario seria 1/5 = 20% .
 
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Tanto en proyectos de software en general como en nuestro proyecto la implementación de esta métrica es viable. Comentar la base de código es parte de las buenas prácticas de desarrollo de software por lo que hay una correlación entre la mantenibilidad de la base del código y su densidad de comentarios. Además, actualmente la mayoría de lenguajes de programación usados permiten los comentarios de forma nativa o tienen un plugin que permite añadirlos. El único escenario en el que podría no recomendarse esta métrica es en el caso en que una gran parte de la base de código ha sido autogenerado. 
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
 ```
+https://api.codetabs.com/v1/loc?github=calebsantiago/sw2_app
+```
+![Lineas de código](https://i.imgur.com/WDfO40Y.png)
+
+En nuestro proyecto las líneas de código están distribuidas como muestran la imagen superior. Ya que buena parte del código JSON y JavaScript es autogenerado se ha optado por obtener la métrica de densidad de comentarios tomando solo en cuenta las líneas de código en TypeScript. Nuestro proyecto tiene un total de 1255 lineas de código de TypreScript de las cuales 23 son líneas de comentarios por lo tanto nuestra densidad de comentarios es de (23/1255)*100 = 1.83%
+
 
 ---
 
-### **Métrica 8: Aquí va el título**
+### **Métrica 8: Promedio de métodos por clase**
 #### **Descripción**
-Aquí va la descripción.
+Según Michele Lanza y Radu Marinescu en _Object-oriented metrics in practice: Using software metrics to characterize, evaluate, and improve the design of object-oriented systems_, métricas simples como NOC (Número de clases), NOM (Numero de métodos u operaciones, incluyendo funciones globales) o LOC (Líneas de código)  no son usadas por sí mismas sino más bien se usan para hallar proporciones entre sí mismas o con otras métricas. Una de estas proporciones tocada en el libro es la razón entre el número de métodos y la cantidad de clases: Promedio de métodos por clase o NOM promedio.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta métrica, como muchas otras, sirve para darse una idea de la mantenibilidad del código. El NOM de una clase puede servir para saber si tenemos “código muerto” en el caso de una clase sin métodos (NOM=0) o una clase sobrecargada si es que tiene muchos métodos (NOM>20). Un NOM promedio muy bajo o muy alto es un indicador de que existen clases con NOM bajo u alto, las cuales pueden ser un indicador de código con mala mantenibilidad. Es por esto que esta métrica puede ser usada en cualquier contexto de una base de código orientada a objetos.
+
+Los beneficios de esta métrica son bastante parecidos al del índice de mantenibilidad ya que ambos se usan como un indicador de mantenibilidad. La diferencia radica en que NOM promedio solo toma en cuenta el código conformado por las clases del programa por lo que en caso de tener un resultado adverso es más fácil de determinar la fuente del problema. Sin embargo, solo tomar en cuenta las clases del programa significa que este indicador no toma en cuenta la mantenibilidad del código que no se encuentre definido como clases. 
 #### **Ejemplo**
 ```typescript
-/*Aquí va el ejemplo.*/
+class Animal {
+    private name: string;
+    constructor(theName: string) { this.name = theName; }
+}
+
+class Rhino extends Animal {
+    constructor() { super("Rhino"); }
+}
+
+class Employee {
+    private name: string;
+    constructor(theName: string) { this.name = theName; }
+}
+
+let animal = new Animal("Goat");
+let rhino = new Rhino();
+let employee = new Employee("Bob");
 ```
+En el presente ejemplo hay un total de 3 clases y 3 métodos por lo que el NOM promedio es 3/3 = 1. 
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+En proyectos de software en general, consideramos que es viable para software con una base de código orientada a objetos, sin embargo, consideramos que no debe ser la única métrica de mantenibilidad ya que se fija únicamente en las clases y sus métodos. El NOM por clase es especialmente útil para analizar clases en específico ya que se puede segmentar las clases con un valor mínimo y máximo. En el caso de nuestro proyecto de software, es viable su utilización ya que utilizamos hacemos uso de varias clases. 
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+![Diagrama de clases contacta](https://i.imgur.com/ihm6sv9.jpg)
+En nuestro proyecto de software tenemos 4 clases y 17 métodos por lo que nuestro NOM promedio es de 17/4 = 4.25
 
 ---
 
@@ -413,3 +435,4 @@ Aquí van las conclusiones.
 - Informática, D. De, & Ciencias, F. De. (2013). open source utilizando métricas de orientación a objetos. 15–29.
 - Lakshminarayana, A., & Newman, T. S. (1999). Principal component analysis of Lack of Cohesion in Methods (LCOM) metrics. Technical Report TRUAH-CS-1999-01. https://pdfs.semanticscholar.org/81f6/1e7225f2f89f6fe61df6d69ef65c1ecb87fd.pdf
 - Arafati, O., & Riehle, D. (2009, May). The comment density of open source software code. In 2009 31st International Conference on Software Engineering-Companion Volume (pp. 195-198). IEEE.
+-Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
