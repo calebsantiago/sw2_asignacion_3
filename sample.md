@@ -12,7 +12,7 @@
 
 ## Abstract
 
-Aquí va el abstract.
+The advances in software evolve every day more and more, this due to the great amount of resources that appear day by day; nevertheless, it is no longer enough to develop software that only fulfills requested requirements, but to implement software with peculiarities that allow to make an easy maintenance, to add new modules of fast form, that is scalable, efficient, etc. For it is essential to know the metrics that this development has, so that it provides us with a vision of the quality, performance, extensibility, etc. Therefore, this research article is oriented to offer several useful metrics to know how good was our software development and what action we can cover to improve our coding.
 
 ---
 
@@ -440,37 +440,42 @@ En nuestro proyecto de software tenemos 4 clases y 17 métodos por lo que nuestr
 
 ---
 
-### **Métrica 9: Aquí va el título**
+### **Métrica 9: Reliability**
 #### **Descripción**
-Aquí va la descripción.
+Reliability es una metrica importante en el desarrollo de software debido a que analiza la calidad del programa mediante factores individuales y colectivos. Esta métrica se enfoca en los defectos y errores del software. Mayor la probabilidad de ocurrencia de un defector en un sistema de software, menor es la confiabilidad del sistema de software (Aman Jatain, 2014). 
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta metrica se usaria debido a la incetidumbre sobre los errores que pueden ocurrir en tu software. Entre los diferentes parametros se encuentra la frecuencia al fallo, tipo de fallo, efecto de la ocurrencia del fallo, frecuencia de ejecución de módulos defectuosos, etc. Usar esta métrica disminuiria los costos, tiempo y recurso que se usan en un software desconfiable; además, al momento de insertar nuevo código se evitarian nuevos fallos y no se requerirá pruebas prolongadas en el sistema para tratarlos lo que ahorra tiempo en el desarrollo. Finalimente, podemos cuantificar la calidad del software y brindar a los desarrolladores una mejor comprensión del proceso de desarrollo.
 #### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
+```C
+int errores (int input)
+{
+    int x,y,k,1;
+    k = input/100;
+    x=2;
+    y= k + 5;
+    if ((3*k+100)> 43)
+    {
+        y++;
+        x = x / (x- y);
+    }
+
+    return x;
+}
 ```
+
+
+Un bugg que podriamos encontrar en el código anterior seria que "x" y "y" serían igual, esto ocacionaria que sea una división a 0 lo cual generaria un error en el programa.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Si es viable en nuestro proyecto porque buscamos que sea confiable y no perder tanto tiempo en pruebas de errores.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+
+
 
 ---
 
 ### **Métrica 10: Duplicated Code**
 #### **Descripción**
 Duplicated Code se da cuando se produce una copia y adaptación de un codigo ya existente, normalmente es implementado cuando se quiere reusar software. Duplicated Code es utilizado debido a que disminuye el tiempo de desarrollo, mejora la confiabilidad, evita malograr el código, etc. Aún asi, Duplicated Code trae problemas como generar un código más extenso, genera mayor esfuerzo a los trabajadores debido que tienen que ser más cautelosos al momento de cambiar las intancias clonadas y representa un desafio al momento de mantener el software.
-
-
--https://pdfs.semanticscholar.org/31ab/b819a2a35c6e81cad768652519139c6c5c00.pdf?_ga=2.113482703.939195665.1561124913-1521911413.1561124913
-
-
-
--https://wettel.github.io/download/wettel05-synasc.pdf
-
-
--https://pdfs.semanticscholar.org/f62f/3a86c086ade81fce21c804b817bc6cc28d81.pdf?_ga=2.193350317.1666261657.1561124913-638334179.1561124913
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
 Esta métrica sirve para tener noción de la mantenibilidad del código, además que al usar codigo duplicado disminuye la escalabilidad de un software. Al saber que cantidad de código clonado tenemos, podemos disminuirlo y evitar las consecuencias que trae este.
 #### **Ejemplo**
@@ -513,4 +518,8 @@ Aquí van las conclusiones.
 - Informática, D. De, & Ciencias, F. De. (2013). open source utilizando métricas de orientación a objetos. 15–29.
 - Lakshminarayana, A., & Newman, T. S. (1999). Principal component analysis of Lack of Cohesion in Methods (LCOM) metrics. Technical Report TRUAH-CS-1999-01. https://pdfs.semanticscholar.org/81f6/1e7225f2f89f6fe61df6d69ef65c1ecb87fd.pdf
 - Arafati, O., & Riehle, D. (2009, May). The comment density of open source software code. In 2009 31st International Conference on Software Engineering-Companion Volume (pp. 195-198). IEEE.
--Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
+- Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
+- Farooq, Sheikh Umar & Quadri, SMK & Ahmad, Nurain. (2012). Metrics, models and measurements in software reliability. IEEE 10th Jubilee International Symposium on Applied Machine Intelligence and Informatics, SAMI 2012 - Proceedings. 441-449. 10.1109/SAMI.2012.6209008.
+- Jatain, Aman & mehta, Yukti. (2014). Metrics and Models for Software Reliability: A Systematic Review. 10.1109/ICICICT.2014.6781281.
+- Jiang, Z. M. (2006). Visualizing and understanding code duplication in large software systems (Master's thesis, University of Waterloo).
+- Hordijk, W., Ponisio, M. L., & Wieringa, R. (2009, April). Harmfulness of Code Duplication-A Structured Review of the Evidence. In EASE.
