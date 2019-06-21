@@ -241,9 +241,32 @@ La falta de cohesión en los métodos (LCOM), esta métrica se encarga de medir 
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
 Aplicado donde no existen atributos de instancia para cada clase, esto quiere decir que todas las variables son heredadas de una clase superior (superclase). También existe el caso de haber definido instancias de clase, pero estas no tienen ninguna referencia. 
 #### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
+```C#
+public class NumberManipulator
+{
+    private int _number;
+ 
+    public int NumberValue => _number;
+ 
+    public void AddOne() => _number++;
+ 
+    public void SubtractOne() => _number--;
+}
 ```
+En el ejemplo anterior se observa que la clase contiene una variable local, dos métodos y una propiedad. En este caso ambos métodos y la propiedad refieren a la variable local. Esta clase es cohesiva, ya que trabaja completamente entorno al campo numérico.
+```C#
+public class NonCohesiveNumberManipulator
+{
+    private int _firstNumber;
+    private int _secondNumber;
+    private int _thirdNumber;
+
+    public void IncrementFirst() => _firstNumber++;
+    public void IncrementSecond() => _secondNumber++;
+    public void IncrementThird() => _thirdNumber++;
+}
+```
+En el último ejemplo existen tres variables locales, las cuales se comunican con un método exclusivo para cada una. Por lo que se puede dar la pregunta si en realidad hay comunicación dentro de esta clase.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 Aquí va eso.
 #### **Aplicación al proyecto de software**
