@@ -397,4 +397,5 @@ Aquí van las conclusiones.
 - Yu, S., & Zhou, S. (2010). *A Survey on Metric of Software.* 2nd IEEE Proceedings of International Conference on Information Management and Engineering (ICIME), 253–356. https://doi.org/10.1109/icime.2010.5477581
 - Frappier, M., Matwin, S., & Mili, A. (1994). Software Metrics for Predicting Maintainability. Journal Of Software Maintenance Research   And Practice, 3(3), 129–143. Retrieved from http://www3.interscience.wiley.com/journal/113445994/abstract
 - Informática, D. De, & Ciencias, F. De. (2013). open source utilizando métricas de orientación a objetos. 15–29.
+- Lakshminarayana, A., & Newman, T. S. (1999). Principal component analysis of Lack of Cohesion in Methods (LCOM) metrics. Technical Report TRUAH-CS-1999-01. https://pdfs.semanticscholar.org/81f6/1e7225f2f89f6fe61df6d69ef65c1ecb87fd.pdf
 
