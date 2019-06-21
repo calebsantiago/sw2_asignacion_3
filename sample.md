@@ -390,11 +390,9 @@ Aquí va la descripción.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
 Aquí va eso.
 #### **Ejemplo**
-![Image 3]
-(https://image.slidesharecdn.com/codecraftsmanship-13426395586098-phpapp01-120719032401-phpapp01/95/code-craftsmanship-39-728.jpg?cb=1342668682)  
-```typescript
-/*Aquí va el ejemplo.*/
-```
+![Ejemplo10](https://image.slidesharecdn.com/codecraftsmanship-13426395586098-phpapp01-120719032401-phpapp01/95/code-craftsmanship-39-728.jpg?cb=1342668682)
+**Figura Ejemplo10:** Duplicate Code Example (Prokarma, 2012) 
+
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 Aquí va eso.
 #### **Aplicación al proyecto de software**
