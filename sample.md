@@ -135,7 +135,7 @@ console.log(maintainability);  // imprime valores de mantenibilidad del proyecto
 
 
 ---
-### **Métrica 3: Core Size**
+### **Métrica 4: Core Size**
 #### **Descripción**
 Hace referencia al porcentaje de módulos que dependen en gran medida de otros módulos y que a su vez dependen de ellos mismos. Este valor es asociado a que a menor porcentaje mejor métrica.
 
@@ -181,7 +181,7 @@ escomplex.processResults(result.coreSize, CoreSize);
 ```
 ---
 
-### **Métrica 3: Counter**
+### **Métrica 5: Counter**
 #### **Descripción**
 Permite cuantificar las llamadas que se puede realizar de una función, variables, etc.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -209,7 +209,7 @@ La métrica identificada es viable a implementar en nuestro proyecto de software
 
 ---
 
-### **Métrica 4: Meter**
+### **Métrica 6: Meter**
 #### **Descripción**
 Meter mide la tasa de eventos realizados de diferentes maneras. La tasa media es la tasa promedio de eventos. Por lo general, se representa como la tasa total para toda la vida útil de su aplicación (por ejemplo, la cantidad total de solicitudes manejadas, dividida por la cantidad de segundos que el proceso ha estado ejecutándose), no ofrece una sensación de actualidad. Afortunadamente, los medidores también registran tres diferentes promedios móviles de ponderación exponencial: los promedios móviles de 1, 5 y 15 minutos.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -235,7 +235,7 @@ Es viable identificar la cantidad de solicitudes de cotización en un periodo de
 
 ---
 
-### **Métrica 5: Statement**
+### **Métrica 7: Statement**
 #### **Descripción**
 Metrica que permite contabilizar el número de declaraciones que se realizaron. Esta métrica no incrementa el contador cuando reconoce una clase. El contador de sentencias incrementa cuando reconoce: if, else, while, do, for, switch, break, continue, return, throw, synchronized, catch, finally.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -258,13 +258,12 @@ El contador de declaraciones aumenta en las sentencias if y catch por lo que el 
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 La métrica es viable para su aplicación en proyectos de software, porque es de utilidad conocer las declaraciones realizadas y con esto conocer si estas están anidadas o no, lo que generaría un proceso difícil de mantenimiento del código.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+Usando la herramienta SonarQube obtenemos los siguientes datos:
 
----
 
-### **Métrica 6: Cognitive Complexity**
+- size -> statement:1288
+
+### **Métrica 8: Cognitive Complexity**
 #### **Descripción**
 Cognitive Complexity es una métrica que a diferencia de la Complejidad ciclómatica, es cuán fácil de entender es el código y por otra parte la complejidad ciclomática cuán difícil de probar es.Existen 3 reglas en las que se encuentra basada la Complejidad Cognitiva:
 - Ignorar la estructura que permite varias declaraciones se pueda leer de forma abreviada en una sola.
@@ -350,13 +349,12 @@ La anidación sucede en:
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 Se considera la Complejidad Cognitiva como una métrica bastante útil para el entendimiento y complejidad del código, es útil para el análisis del código y la estructura del software.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+Usando la herramienta SonarQube obtenemos los siguientes datos:
 
----
 
-### **Métrica 7: Densidad de comentarios**
+- Cognitive Complexity:567
+
+### **Métrica 9: Densidad de comentarios**
 #### **Descripción**
 Según Oliver Arafat y Dirk Riehle en _The Comment Density of Open Source Software Code_, se tienen los siguientes preconceptos:
 *	Línea de código base (SLOC): Es una línea física en un archivo fuente que contiene código fuente.
@@ -394,7 +392,7 @@ En nuestro proyecto las líneas de código están distribuidas como muestran la 
 
 ---
 
-### **Métrica 8: Promedio de métodos por clase**
+### **Métrica 10: Promedio de métodos por clase**
 #### **Descripción**
 Según Michele Lanza y Radu Marinescu en _Object-oriented metrics in practice: Using software metrics to characterize, evaluate, and improve the design of object-oriented systems_, métricas simples como NOC (Número de clases), NOM (Numero de métodos u operaciones, incluyendo funciones globales) o LOC (Líneas de código)  no son usadas por sí mismas sino más bien se usan para hallar proporciones entre sí mismas o con otras métricas. Una de estas proporciones tocada en el libro es la razón entre el número de métodos y la cantidad de clases: Promedio de métodos por clase o NOM promedio.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -433,7 +431,7 @@ En nuestro proyecto de software tenemos 4 clases y 17 métodos por lo que nuestr
 
 ---
 
-### **Métrica 9: Reliability**
+### **Métrica 11: Reliability**
 #### **Descripción**
 Reliability es una metrica importante en el desarrollo de software debido a que analiza la calidad del programa mediante factores individuales y colectivos. Esta métrica se enfoca en los defectos y errores del software. Mayor la probabilidad de ocurrencia de un defector en un sistema de software, menor es la confiabilidad del sistema de software (Aman Jatain, 2014). 
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -461,12 +459,15 @@ Un bugg que podriamos encontrar en el código anterior seria que "x" y "y" serí
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 Si es viable en nuestro proyecto porque buscamos que sea confiable y no perder tanto tiempo en pruebas de errores.
 #### **Aplicación al proyecto de software**
+Usando la herramienta SonarQube obtenemos los siguientes datos:
 
+
+- Reliability -> bugs:2; Rating:"C"; Remediation Effort:30min
 
 
 ---
 
-### **Métrica 10: Duplicated Code**
+### **Métrica 12: Duplicated Code**
 #### **Descripción**
 Duplicated Code se da cuando se produce una copia y adaptación de un codigo ya existente, normalmente es implementado cuando se quiere reusar software. Duplicated Code es utilizado debido a que disminuye el tiempo de desarrollo, mejora la confiabilidad, evita malograr el código, etc. Aún asi, Duplicated Code trae problemas como generar un código más extenso, genera mayor esfuerzo a los trabajadores debido que tienen que ser más cautelosos al momento de cambiar las intancias clonadas y representa un desafio al momento de mantener el software.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -483,11 +484,10 @@ En el ejemplo podemos ver que la estructura es identica y el cambio se da en el 
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
 Si, debido a que un proyecto de software debe ser escalable y fácil de mantener. Saber que cantidad de código es clonado en nuestro proyecto no ayudaria a dismuirlo e implementar un mejor diseño de sofware.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+Usando la herramienta SonarQube obtenemos los siguientes datos:
 
----
+
+- Duplication -> density:11.7%; duplicated lines:384; duplicated blocks:21; duplicated files:6
 
 ## Conclusiones
 
