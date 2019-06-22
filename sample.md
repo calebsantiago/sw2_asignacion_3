@@ -12,7 +12,7 @@
 
 ## Abstract
 
-The advances in software evolve every day more and more, this due to the great amount of resources that appear day by day; nevertheless, it is no longer enough to develop software that only fulfills requested requirements, but to implement software with peculiarities that allow to make an easy maintenance, to add new modules of fast form, that is scalable, efficient, etc. For it is essential to know the metrics that this development has, so that it provides us with a vision of the quality, performance, extensibility, etc. Therefore, this research article is oriented to offer several useful metrics to know how good was our software development and what action we can cover to improve our coding.
+La sociedad cada día depende más de sistemas informáticos. Este aumento de dependencia incrementa la necesidad de software tolerante a fallos. Sin embargo, este aumento de demanda de software también exige software más complejo. Debido a esto, ya no es suficiente desarrollar software que solo cumple con requerimientos. El software a desarrollar debe ser escalable, eficiente, mantenible, fácil de entender, capaz de implementar nuevos módulos de forma rápida, y más. Para lograr esto una herramienta de vital importancia son las métricas de software. Estas brindan una forma objetiva de evaluar diversos indicadores de una base de código como su mantenibilidad, rendimiento, extensibilidad, etc. El presente trabajo tiene como objetivo desarrollar el concepto de métrica de software, así como definir y ejemplificar diversas métricas de software.
 
 ---
 
