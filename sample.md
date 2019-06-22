@@ -235,40 +235,28 @@ Es viable identificar la cantidad de solicitudes de cotización en un periodo de
 
 ---
 
-### **Métrica 5: Lack of Cohesion of Methods**
+### **Métrica 5: Statement**
 #### **Descripción**
-La falta de cohesión en los métodos (LCOM), esta métrica se encarga de medir la correlación entre los métodos y las variables de instancia local de una clase. Si existe muy baja cohesión se aumenta la complejidad del software, por el contrario una alta cohesión garantiza una buena subdivisión de la clase. Las clases que presentan baja cohesión pueden ser divididas en dos o más subclases que tengan una cohesión mayor.
+Metrica que permite contabilizar el número de declaraciones que se realizaron. Esta métrica no incrementa el contador cuando reconoce una clase. El contador de sentencias incrementa cuando reconoce: if, else, while, do, for, switch, break, continue, return, throw, synchronized, catch, finally.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aplicado donde no existen atributos de instancia para cada clase, esto quiere decir que todas las variables son heredadas de una clase superior (superclase). También existe el caso de haber definido instancias de clase, pero estas no tienen ninguna referencia. 
+Métrica usada para el conteo de declaraciones que se realizan dentro de una clase o método. 
 #### **Ejemplo**
-```C#
-public class NumberManipulator
-{
-    private int _number;
- 
-    public int NumberValue => _number;
- 
-    public void AddOne() => _number++;
- 
-    public void SubtractOne() => _number--;
+```Java
+while(theWorldTurns) {
+  if(isMorning) { //cont +1
+    try {
+      if (env.debugMode()) { //cont +1 
+        System.out.println("Hello, world!");
+      }
+    } catch (BadDay e) { //cont +1
+      System.out.println("Yikes!");
+    }
+  }
 }
 ```
-En el ejemplo anterior se observa que la clase contiene una variable local, dos métodos y una propiedad. En este caso ambos métodos y la propiedad refieren a la variable local. Esta clase es cohesiva, ya que trabaja completamente entorno al campo numérico.
-```C#
-public class NonCohesiveNumberManipulator
-{
-    private int _firstNumber;
-    private int _secondNumber;
-    private int _thirdNumber;
-
-    public void IncrementFirst() => _firstNumber++;
-    public void IncrementSecond() => _secondNumber++;
-    public void IncrementThird() => _thirdNumber++;
-}
-```
-En el último ejemplo existen tres variables locales, las cuales se comunican con un método exclusivo para cada una. Por lo que se puede dar la pregunta si en realidad hay comunicación dentro de esta clase.
+El contador de declaraciones aumenta en las sentencias if y catch por lo que el número de declaraciones en el código sería 3
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-La métrica es totalmente viable para su aplicación en proyectos de software, dado que es importante conocer la cohesión entre las clases de dicho software.
+La métrica es viable para su aplicación en proyectos de software, porque es de utilidad conocer las declaraciones realizadas y con esto conocer si estas están anidadas o no, lo que generaría un proceso difícil de mantenimiento del código.
 #### **Aplicación al proyecto de software**
 ```typescript
 /*Aquí va la aplicación.*/
@@ -523,10 +511,10 @@ Si, debido a que un proyecto de software debe ser escalable y fácil de mantener
 - Yu, S., & Zhou, S. (2010). *A Survey on Metric of Software.* 2nd IEEE Proceedings of International Conference on Information Management and Engineering (ICIME), 253–356. https://doi.org/10.1109/icime.2010.5477581
 - Frappier, M., Matwin, S., & Mili, A. (1994). Software Metrics for Predicting Maintainability. Journal Of Software Maintenance Research   And Practice, 3(3), 129–143. Retrieved from http://www3.interscience.wiley.com/journal/113445994/abstract
 - Informática, D. De, & Ciencias, F. De. (2013). open source utilizando métricas de orientación a objetos. 15–29.
-- Lakshminarayana, A., & Newman, T. S. (1999). Principal component analysis of Lack of Cohesion in Methods (LCOM) metrics. Technical Report TRUAH-CS-1999-01. https://pdfs.semanticscholar.org/81f6/1e7225f2f89f6fe61df6d69ef65c1ecb87fd.pdf
 - Arafati, O., & Riehle, D. (2009, May). The comment density of open source software code. In 2009 31st International Conference on Software Engineering-Companion Volume (pp. 195-198). IEEE.
 - Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
 - Farooq, Sheikh Umar & Quadri, SMK & Ahmad, Nurain. (2012). Metrics, models and measurements in software reliability. IEEE 10th Jubilee International Symposium on Applied Machine Intelligence and Informatics, SAMI 2012 - Proceedings. 441-449. 10.1109/SAMI.2012.6209008.
 - Jatain, Aman & mehta, Yukti. (2014). Metrics and Models for Software Reliability: A Systematic Review. 10.1109/ICICICT.2014.6781281.
 - Jiang, Z. M. (2006). Visualizing and understanding code duplication in large software systems (Master's thesis, University of Waterloo).
 - Hordijk, W., Ponisio, M. L., & Wieringa, R. (2009, April). Harmfulness of Code Duplication-A Structured Review of the Evidence. In EASE.
+- G. Ann Campbell (2018, September). COGNITIVE COMPLEXITY A new way of measuring understandability. https://www.sonarsource.com/docs/CognitiveComplexity.pdf
