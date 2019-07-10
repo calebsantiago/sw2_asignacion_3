@@ -52,12 +52,35 @@ La complejidad ciclomática para el código anterior se obtiene a través del gr
 La utilización de la métrica en el proyecto de software es adecuada debido a que ayudará a encontrar porciones inconsistentes del programa, en donde se requerirá refactorizar para que los mismos sean mucho más entendibles y mantenibles, asimismo, se reducirán sus riesgos asociados con respecto a su modificación en el tiempo.
 #### **Aplicación al proyecto de software**
 ```typescript
-/*ejecutar el comando 'npm install ts-complex --save' en cmd*/
-const tscomplex = require('ts-complex') /*invoca a la librería ts-complex*/
-const path = './app.ts' /*ruta del archivo con extensión typescript*/
-const complexity = tscomplex.calculateCyclomaticComplexity(path) /*calcula la complejidad ciclomática*/
-console.log(complexity) /*imprime el cálculo en pantalla*/
-/*se obtuvo el resultado de 2.22 como valor promedio debido a la independencia de las funciones*/
+describe('app test', () => {
+    beforeAll(() => {
+        const db : string = 'mongodb+srv://user:password@cluster0-aqv0w.mongodb.net/test?retryWrites=true'
+        connect({db})
+    })
+    afterAll((done) => {
+        mongoose.disconnect(done)
+    })
+    it('findclientbyid', async () => {
+        let response = await ClientMock.getInstance().findbyid('5d228ba5834d870dec4450be')
+        let result = 'caleb'
+        if (response != null) {
+            expect(response.name.firstname).toEqual(result)
+        }
+        else {
+            expect(response).toEqual(null)
+        }
+    })
+    it('findcheckbyclient', async () => {
+        let response = await QuotationMock.getInstance().findcheckbyclient('5d228ba5834d870dec4450be')
+        let result = 'panadería'
+        if (response.length > 0) {
+            expect(response[0].service).toEqual(result)
+        }
+        else {
+            expect(response).toEqual([])
+        }
+    })
+})
 ```
 
 ---
