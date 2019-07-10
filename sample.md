@@ -12,13 +12,13 @@
 
 ## Abstract
 
-Aquí va el abstract.
+La sociedad cada día depende más de sistemas informáticos. Este aumento de dependencia incrementa la necesidad de software tolerante a fallos. Sin embargo, este aumento de demanda de software también exige software más complejo. Debido a esto, ya no es suficiente desarrollar software que solo cumple con requerimientos. El software a desarrollar debe ser escalable, eficiente, mantenible, fácil de entender, capaz de implementar nuevos módulos de forma rápida, y más. Para lograr esto una herramienta de vital importancia son las métricas de software. Estas brindan una forma objetiva de evaluar diversos indicadores de una base de código como su mantenibilidad, rendimiento, extensibilidad, etc. El presente trabajo tiene como objetivo desarrollar el concepto de métrica de software, así como definir y ejemplificar diversas métricas de software.
 
 ---
 
 ## Introducción
 
-Aquí va la introducción.
+El desarrollo de software engloba una gran cantidad de tareas que son necesarias, sin embargo para conocer si nuestro software fue el mas óptimo podemos comprobarlo mediante la aplicación de una serie de métricas que pueda darnos un diagnóstico de qué tan adecuado fue nuestro desarrollo o no, es por ello que realizar una correcta parametrización y análisis es imprescindible para comprender las métricas que deseamos calcular, es respecto a estas métricas que deseamos calcular, las que nos permitirán compararnos que tan bien hemos implementado nuestro software y si es necesario aplicar métodos de refactorización para mejorar nuestro programa. Para ello mediante el presente artículo buscamos dar a conocer métricas, así mismo como una ejemplificación de ellas y la relevancia que estas tienen para el desarrollo del software.
 
 ---
 
@@ -107,8 +107,104 @@ console.log(complexity) /*imprime el cálculo en pantalla*/
 ```
 
 ---
+### **Métrica 3: Mantenibilidad**
+#### **Descripción**
+Hace referencia a la facilidad con la que se puede mantener un sistema. Es un atributo interno del sistema que no puede medirse directamente. En lugar de ello, se pueden medir atributos del proceso de mantenimiento, tales como el tiempo necesario para realizar un cambio, el cual está influenciado por la capacidad de mantenimiento del software (Frappier, Matwin, & Mili, 1994).
+Fórmula = 171-5.2In(HV)-0.23CC-16.2In(LOC)+50.0sin√2.46*COM 
+HV:Halstead
+LOC : Líneas de código
+COM : porcentaje de comentarios
 
-### **Métrica 3: Counter**
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+La mantenibilidad es importante en todo software hoy en dia, el grado de mantenibilidad está asociado al grado de calidad del software, ya que un software demasiado complejo a nivel de mantenimiento no sería el adecuado ya que no sería fácilmente modificable o reusable. Así mismo, según Herbold: La mantenibilidad se asocia a otros conceptos claves en el desarrollo del software los cuales son el grado de testeabilidad, comprensibilidad , extensibilidad de manera que si cumplen estas características satisfactoriamente se podría decir que el software será mantenible y en consecuencia la detección como la corrección de errores será rápida y eficiente, además de proporcionar otras ventajas (Informática & Ciencias, 2013).
+#### **Ejemplo**
+
+```typescript
+public static String Sha1(String plainText)
+{
+  using (SHA1Managed sha1=new SHA1Managed())
+  {
+    Byte[] text=Encoding.Unicode.GetBytes(plainText);
+    Byte[] hashBytes=sha1.ComputeHash(text);
+    return Convert.ToBase64String(hashBytes);
+   }
+}
+
+public static String Sha1(String plainText)
+{
+  Byte[] text, hashBytes;
+  using (SHA1Managed sha1=new SHA1Managed())
+  {
+    text=Encoding.Unicode.GetBytes(plainText);
+    hashBytes=sha1.ComputeHash(text);
+  }
+  return Convert.ToBase64String(hashBytes);
+}
+El índice de mantenibilidad (MI) para el primer ejemplo es de 71 mientras que con la aplicación de técnicas de refactorización, se observa que el valor de mantenibilidad aumenta en 2 puntos en general dicho código posee una buena mantenibilidad al encontrarse en el rango de 20-100.
+*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+La aplicación de la métrica descrita es viable de implementar en nuestro proyecto de software debido a que nos permitirá conocer cuan mantenible es nuestro proyecto, de forma que podremos tener una retroalimentación de qué aspectos mejorar para futuros trabajos en base a este.
+
+
+#### **Aplicación al proyecto de software**
+```typescript
+/*const tscomplex = require('ts-complex'); //adquiere la libreria ts-complex para posteriomente realizar el calculo
+const path = './app.ts'; // accede a la ruta del archivo a evaluar 
+const maintainability = tscomplex.calculateMaintainability(path); //calcula la mantenibilidad del software
+console.log(maintainability);  // imprime valores de mantenibilidad del proyecto 
+*/
+```
+
+
+---
+### **Métrica 4: Core Size**
+#### **Descripción**
+Hace referencia al porcentaje de módulos que dependen en gran medida de otros módulos y que a su vez dependen de ellos mismos. Este valor es asociado a que a menor porcentaje mejor métrica.
+
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+
+Conocer el porcentaje de módulos que poseen dependencias es importante para tener conocimiento del grado de acoplamiento que posee el software, de manera que la meta en todo buen software es que posea una alta cohesión y un bajo acoplamiento de esta manera conocer dicha métrica será relevante al poder implementar las medidas correctivas y nuestro software sea mucho mas tolerante a fallos. Los beneficios de de su utilización será relevantes para disminuir tasa de errores, mejorar la mantenibilidad, etc. 
+#### **Ejemplo**
+
+```typescript
+calculateCoreSize(projectReport, visibilityMatrix)  {
+     if (projectReport.firstOrderDensity === 0)     {
+        projectReport.coreSize = 0;
+        return;
+     }
+      const length = visibilityMatrix.length;
+      const fanIn = new Array(length);
+     const fanOut = new Array(length);
+     let coreSize = 0;
+ 
+     for (let rowIndex = 0; rowIndex < length; rowIndex++)     {
+        fanIn[rowIndex] = visibilityMatrix[rowIndex].reduce((sum,value,valueIndex) =>
+        {
+fanOut[valueIndex] = rowIndex === 0 ? value :fanOut[valueIndex]+ value;
+           return sum + value;
+       }, 0);
+     }
+Considerar que mientras mas bajo sea el valor mejor, viceversa.
+
+*/
+```
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Efectivamente la aplicación de esta métrica en nuestro de proyecto de software será de gran ayuda para conocer qué tan acoplados se encuentran nuestras clases y en proyectos futuros aplicar técnicas para reducir este acoplamiento de manera que en caso de algún error en alguno de los módulos del software no presente grandes inconvenientes en módulos que ahora se puedan encontrar acoplados a ellos.
+
+
+
+#### **Aplicación al proyecto de software**
+```typescript
+/*const escomplex = require('escomplex');
+const result = escomplex.analyse('./app.ts', options);
+const CoreSize = true;
+escomplex.processResults(result.coreSize, CoreSize);
+*/
+```
+---
+
+### **Métrica 5: Counter**
 #### **Descripción**
 Permite cuantificar las llamadas que se puede realizar de una función, variables, etc.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -136,7 +232,7 @@ La métrica identificada es viable a implementar en nuestro proyecto de software
 
 ---
 
-### **Métrica 4: Meter**
+### **Métrica 6: Meter**
 #### **Descripción**
 Meter mide la tasa de eventos realizados de diferentes maneras. La tasa media es la tasa promedio de eventos. Por lo general, se representa como la tasa total para toda la vida útil de su aplicación (por ejemplo, la cantidad total de solicitudes manejadas, dividida por la cantidad de segundos que el proceso ha estado ejecutándose), no ofrece una sensación de actualidad. Afortunadamente, los medidores también registran tres diferentes promedios móviles de ponderación exponencial: los promedios móviles de 1, 5 y 15 minutos.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
@@ -162,128 +258,264 @@ Es viable identificar la cantidad de solicitudes de cotización en un periodo de
 
 ---
 
-### **Métrica 5: Aquí va el título**
+### **Métrica 7: Statement**
 #### **Descripción**
-Aquí va la descripción.
+Metrica que permite contabilizar el número de declaraciones que se realizaron. Esta métrica no incrementa el contador cuando reconoce una clase. El contador de sentencias incrementa cuando reconoce: if, else, while, do, for, switch, break, continue, return, throw, synchronized, catch, finally.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Métrica usada para el conteo de declaraciones que se realizan dentro de una clase o método. 
+#### **Ejemplo**
+```Java
+while(theWorldTurns) {
+  if(isMorning) { //cont +1
+    try {
+      if (env.debugMode()) { //cont +1 
+        System.out.println("Hello, world!");
+      }
+    } catch (BadDay e) { //cont +1
+      System.out.println("Yikes!");
+    }
+  }
+}
+```
+El contador de declaraciones aumenta en las sentencias if y catch por lo que el número de declaraciones en el código sería 3
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+La métrica es viable para su aplicación en proyectos de software, porque es de utilidad conocer las declaraciones realizadas y con esto conocer si estas están anidadas o no, lo que generaría un proceso difícil de mantenimiento del código.
+#### **Aplicación al proyecto de software**
+Usando la herramienta SonarQube obtenemos los siguientes datos:
+
+
+- size -> statement:1288
+
+### **Métrica 8: Cognitive Complexity**
+#### **Descripción**
+Cognitive Complexity es una métrica que a diferencia de la Complejidad ciclómatica, es cuán fácil de entender es el código y por otra parte la complejidad ciclomática cuán difícil de probar es.Existen 3 reglas en las que se encuentra basada la Complejidad Cognitiva:
+- Ignorar la estructura que permite varias declaraciones se pueda leer de forma abreviada en una sola.
+- Incrementar para cada interrupción en el flujo de código
+- Incrementar cuando las estructuras que rompen el flujo están anidadas
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Puesto que el proceso de escritura y mantenimiento del código es un proceso humano, y pese a que las salidas de estos se adhieren a un modelo matemático. Por lo que la complejidad cognitiva rompe con el modelo de usar modelos matemáticos para el mantenimiento del software. Aunque se tenga como precedente la complejidad ciclomática se requiere de evaluación y criterio humano para decidir como deben contarse las estructuras y decidir que se debe añadir al modelo.
+#### **Ejemplo**
+Ignorar taquigrafía:
+
+```C#
+MyObj myObj = null;
+if (a != null) {
+ myObj = a.myObj;
+}
+```
+```C#
+MyObj myObj = a?.myObj;
+```
+El primer ejemplo tarda un poco más en pocesarce que el segundo, ya que en este último se comprende la sintaxis de unión nula. Es por este motivo que la complejidad cognitiva ignora los operadores de unión nula.
+
+Rupturas en el flujo lineal:
+
+Otro principio de la la complejidad cognitiva es que aquellas estructuras en las cuales el flujo lineal del código se ven afectadas por interrupciones de arriba a abajo, izquierda a derecha requieren de mayor esfuerzo. Esto sucede con:
+- Las estructulas de bucles: for, while, do while, etc.
+- Condicionales: if, else
+- Recursión
+
+```JavaScript
+function count(a, b, c) {
+  var total = 0;
+
+  total += a;
+  total += b;
+  total += c;
+  
+  return total;
+}
+```
+Flujo de código sin rupturas de arriba hacia abajo.
+```JavaScript
+function count(a, b, c) {
+  var total = 0;
+  var nums = [a, b, c];
+  
+  for (var i = 0; i < nums.length; i++) {
+    total += nums[i];
+  }
+  
+  return total;
+}
+```
+Código con rupturas de flujo.
+
+Anidamiento:
+
+Cuanto más anidado se encuentre el código más dificil será su procesamiento.
+
+```Java
+if (env.debugMode()) {
+  System.out.println("Hello, world!");
+}
+```
+Línea de código simple
+```Java
+while(theWorldTurns) {
+  if(isMorning) {
+    try {
+      if (env.debugMode()) {
+        System.out.println("Hello, world!");
+      }
+    } catch (BadDay e) {
+      System.out.println("Yikes!");
+    }
+  }
+}
+```
+En este caso el condicional agrega complejidad al código.
+La anidación sucede en:
+- Condicionales
+- Bucles
+- try/ catch  blocks
+#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
+Se considera la Complejidad Cognitiva como una métrica bastante útil para el entendimiento y complejidad del código, es útil para el análisis del código y la estructura del software.
+#### **Aplicación al proyecto de software**
+Usando la herramienta SonarQube obtenemos los siguientes datos:
+
+
+- Cognitive Complexity:567
+
+### **Métrica 9: Densidad de comentarios**
+#### **Descripción**
+Según Oliver Arafat y Dirk Riehle en _The Comment Density of Open Source Software Code_, se tienen los siguientes preconceptos:
+*	Línea de código base (SLOC): Es una línea física en un archivo fuente que contiene código fuente.
+*	Línea de comentario (CL): Es una línea física en un archivo fuente que representa un comentario.
+*	Línea de código (LOC): Es un SLOC o un CL. 
+
+La densidad de líneas de código es definida como el porcentaje resultante de dividir el total de líneas de comentario entre el total de líneas de código de un archivo o de un grupo de archivos.
+#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
+Esta métrica puede ser usada para cualquier base de código, sin embargo, se considera que su uso es más beneficioso en código que no es autogenerado. Esto se debe a que el objetivo de la métrica es determinar que tanto un código fue o es comentado por sus desarrolladores. En el caso de código autogenerado es inusual que el desarrollador lo comente ya que normalmente se autogenera código simple.
+
+Según Oliver Arafat y Dirk Riehle, _se asume que la densidad de comentarios es un buen predictor de la mantenibilidad y por lo tanto supervivencia de un proyecto_. Debido a esto, los beneficios de esta métrica son bastante parecidos a los del Índice de mantenibilidad los cuales ya han sido mencionados anteriormente. El único beneficio de esta métrica que no comparte con el índice de mantenibilidad es el conocimiento específico sobre los comentarios del código.
+
 #### **Ejemplo**
 ```typescript
-/*Aquí va el ejemplo.*/
+//Generated by typescript 1.8.10
+var disp = function () {
+   console.log("Function invoked");
+};
+disp();
 ```
+En el presente ejemplo hay un total de 5 líneas de código y 1 línea de comentario por lo que la densidad de comentario seria 1/5 = 20% .
+
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Tanto en proyectos de software en general como en nuestro proyecto la implementación de esta métrica es viable. Comentar la base de código es parte de las buenas prácticas de desarrollo de software por lo que hay una correlación entre la mantenibilidad de la base del código y su densidad de comentarios. Además, actualmente la mayoría de lenguajes de programación usados permiten los comentarios de forma nativa o tienen un plugin que permite añadirlos. El único escenario en el que podría no recomendarse esta métrica es en el caso en que una gran parte de la base de código ha sido autogenerado. 
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
 ```
+https://api.codetabs.com/v1/loc?github=calebsantiago/sw2_app
+```
+![Image 3: Lineas de código](https://i.imgur.com/WDfO40Y.png)
+
+**Figura 3:** Líneas de codigo en proyecto sw2_app por lenguaje.
+
+En nuestro proyecto las líneas de código están distribuidas como muestran la imagen superior. Ya que buena parte del código JSON y JavaScript es autogenerado se ha optado por obtener la métrica de densidad de comentarios tomando solo en cuenta las líneas de código en TypeScript. Nuestro proyecto tiene un total de 1255 lineas de código de TypreScript de las cuales 23 son líneas de comentarios por lo tanto nuestra densidad de comentarios es de (23/1255)*100 = 1.83%
+
 
 ---
 
-### **Métrica 6: Aquí va el título**
+### **Métrica 10: Promedio de métodos por clase**
 #### **Descripción**
-Aquí va la descripción.
+Según Michele Lanza y Radu Marinescu en _Object-oriented metrics in practice: Using software metrics to characterize, evaluate, and improve the design of object-oriented systems_, métricas simples como NOC (Número de clases), NOM (Numero de métodos u operaciones, incluyendo funciones globales) o LOC (Líneas de código)  no son usadas por sí mismas sino más bien se usan para hallar proporciones entre sí mismas o con otras métricas. Una de estas proporciones tocada en el libro es la razón entre el número de métodos y la cantidad de clases: Promedio de métodos por clase o NOM promedio.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta métrica, como muchas otras, sirve para darse una idea de la mantenibilidad del código. El NOM de una clase puede servir para saber si tenemos “código muerto” en el caso de una clase sin métodos (NOM=0) o una clase sobrecargada si es que tiene muchos métodos (NOM>20). Un NOM promedio muy bajo o muy alto es un indicador de que existen clases con NOM bajo u alto, las cuales pueden ser un indicador de código con mala mantenibilidad. Es por esto que esta métrica puede ser usada en cualquier contexto de una base de código orientada a objetos.
+
+Los beneficios de esta métrica son bastante parecidos al del índice de mantenibilidad ya que ambos se usan como un indicador de mantenibilidad. La diferencia radica en que NOM promedio solo toma en cuenta el código conformado por las clases del programa por lo que en caso de tener un resultado adverso es más fácil de determinar la fuente del problema. Sin embargo, solo tomar en cuenta las clases del programa significa que este indicador no toma en cuenta la mantenibilidad del código que no se encuentre definido como clases. 
 #### **Ejemplo**
 ```typescript
-/*Aquí va el ejemplo.*/
+class Animal {
+    private name: string;
+    constructor(theName: string) { this.name = theName; }
+}
+
+class Rhino extends Animal {
+    constructor() { super("Rhino"); }
+}
+
+class Employee {
+    private name: string;
+    constructor(theName: string) { this.name = theName; }
+}
+
+let animal = new Animal("Goat");
+let rhino = new Rhino();
+let employee = new Employee("Bob");
 ```
+En el presente ejemplo hay un total de 3 clases y 3 métodos por lo que el NOM promedio es 3/3 = 1. 
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+En proyectos de software en general, consideramos que es viable para software con una base de código orientada a objetos, sin embargo, consideramos que no debe ser la única métrica de mantenibilidad ya que se fija únicamente en las clases y sus métodos. El NOM por clase es especialmente útil para analizar clases en específico ya que se puede segmentar las clases con un valor mínimo y máximo. En el caso de nuestro proyecto de software, es viable su utilización ya que utilizamos hacemos uso de varias clases. 
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+![Image 4:Diagrama de clases contacta](https://i.imgur.com/ihm6sv9.jpg)
+
+**Figura 4:** Diagrama de clases de proyecto sw2_app.
+
+En nuestro proyecto de software tenemos 4 clases y 17 métodos por lo que nuestro NOM promedio es de 17/4 = 4.25
 
 ---
 
-### **Métrica 7: Aquí va el título**
+### **Métrica 11: Reliability**
 #### **Descripción**
-Aquí va la descripción.
+Reliability es una metrica importante en el desarrollo de software debido a que analiza la calidad del programa mediante factores individuales y colectivos. Esta métrica se enfoca en los defectos y errores del software. Mayor la probabilidad de ocurrencia de un defector en un sistema de software, menor es la confiabilidad del sistema de software (Aman Jatain, 2014). 
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta metrica se usaria debido a la incetidumbre sobre los errores que pueden ocurrir en tu software. Entre los diferentes parametros se encuentra la frecuencia al fallo, tipo de fallo, efecto de la ocurrencia del fallo, frecuencia de ejecución de módulos defectuosos, etc. Usar esta métrica disminuiria los costos, tiempo y recurso que se usan en un software desconfiable; además, al momento de insertar nuevo código se evitarian nuevos fallos y no se requerirá pruebas prolongadas en el sistema para tratarlos lo que ahorra tiempo en el desarrollo. Finalimente, podemos cuantificar la calidad del software y brindar a los desarrolladores una mejor comprensión del proceso de desarrollo.
 #### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
+```C
+int errores (int input)
+{
+    int x,y,k,1;
+    k = input/100;
+    x=2;
+    y= k + 5;
+    if ((3*k+100)> 43)
+    {
+        y++;
+        x = x / (x- y);
+    }
+
+    return x;
+}
 ```
+
+
+Un bugg que podriamos encontrar en el código anterior seria que "x" y "y" serían igual, esto ocacionaria que sea una división a 0 lo cual generaria un error en el programa.
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Si es viable en nuestro proyecto porque buscamos que sea confiable y no perder tanto tiempo en pruebas de errores.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+Usando la herramienta SonarQube obtenemos los siguientes datos:
+
+
+- Reliability -> bugs:2; Rating:"C"; Remediation Effort:30min
+
 
 ---
 
-### **Métrica 8: Aquí va el título**
+### **Métrica 12: Duplicated Code**
 #### **Descripción**
-Aquí va la descripción.
+Duplicated Code se da cuando se produce una copia y adaptación de un codigo ya existente, normalmente es implementado cuando se quiere reusar software. Duplicated Code es utilizado debido a que disminuye el tiempo de desarrollo, mejora la confiabilidad, evita malograr el código, etc. Aún asi, Duplicated Code trae problemas como generar un código más extenso, genera mayor esfuerzo a los trabajadores debido que tienen que ser más cautelosos al momento de cambiar las intancias clonadas y representa un desafio al momento de mantener el software.
 #### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
+Esta métrica sirve para tener noción de la mantenibilidad del código, además que al usar codigo duplicado disminuye la escalabilidad de un software. Al saber que cantidad de código clonado tenemos, podemos disminuirlo y evitar las consecuencias que trae este.
 #### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
-```
+![Ejemplo10](https://image.slidesharecdn.com/codecraftsmanship-13426395586098-phpapp01-120719032401-phpapp01/95/code-craftsmanship-39-728.jpg?cb=1342668682)
+
+
+**Figura 5:** Duplicate Code Example (Prokarma, 2012)
+
+
+En el ejemplo podemos ver que la estructura es identica y el cambio se da en el nombre de la función.
+
 #### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
+Si, debido a que un proyecto de software debe ser escalable y fácil de mantener. Saber que cantidad de código es clonado en nuestro proyecto no ayudaria a dismuirlo e implementar un mejor diseño de sofware.
 #### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
+Usando la herramienta SonarQube obtenemos los siguientes datos:
 
----
 
-### **Métrica 9: Aquí va el título**
-#### **Descripción**
-Aquí va la descripción.
-#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
-#### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
-```
-#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
-#### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
-
----
-
-### **Métrica 10: Aquí va el título**
-#### **Descripción**
-Aquí va la descripción.
-#### **¿En qué contextos se utilizaría? ¿Cuáles serían los beneficios de su utilización?**
-Aquí va eso.
-#### **Ejemplo**
-```typescript
-/*Aquí va el ejemplo.*/
-```
-#### **¿Considera que la utilización de la técnica es viable para su aplicación en proyectos de software?**
-Aquí va eso.
-#### **Aplicación al proyecto de software**
-```typescript
-/*Aquí va la aplicación.*/
-```
-
----
+- Duplication -> density:11.7%; duplicated lines:384; duplicated blocks:21; duplicated files:6
 
 ## Conclusiones
 
-Aquí van las conclusiones.
-
----
-
-## Rúbrica
-
-| Criterio | Sobresaliente | Aceptable | Deficiente |
-|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1.Clasificación de fuentes | El alumno presenta una adecuada clasificación de los temas recopilados, considerando las áreas y sub áreas del tema escogido. (5 ptos.)   | Existen cierta información que no guarda una relación directa con el tema analizado. (4-3 ptos.)  | Las fuentes bibliográficas son dispersas y no guardan relación con el tema escogido. (1-2 ptos.)  |
-| 2.Material relevante obtenido de fuentes confiables | La información obtenida es de alta calidad dada por: conferencias o journals de la especialidad y de alto impacto. Clasificación del material obtenido de journals q1-q2. (5 ptos.)  | Alguna de la información recopilada proviene de fuentes de dudosa procedencia. Se ha centrado en journals q3-q4 o en congresos de la especialidad de bajo impacto. (4-3 ptos.) | El material recopilado ha sido obtenido de fuentes de bajo nivel, en algunos casos se presume que proviene de journals o conferencias clasificadas como depredadoras. (1-2 ptos.) |
-| 3.Utilización del formato APA u otro formato de referencia | Se ha utilizado de forma adecuada el formato APA, Vancouver o Harvard, con sus respectivas variantes aceptadas. Esto incluye la referencia a todo nivel: texto y figuras. (5 ptos.) | Se presentan ciertas fallas, menos al 30% de referencias utilizadas de forma errónea o material no referenciado, al interior del artículo. (4-3 ptos.)  | No se ha utilizado el formato de referencia adecuado o se ha usado combinación entre varios formatos. Existen diversas partes sin referenciar al interior del artículo. (1-2 ptos.)  |
-| 4.Síntesis adecuada de la información recopilada  | Se han tomado aproximadamente más de 5 artículos para la elaboración de su artículo. Información relevante ha sido obtenida de cada uno de ellos, sintetizando de forma adecuada el aporte de cada uno de ellos. (5 ptos.)     | El número de referencias tomadas para el artículo ha sido entre 3 y <5 artículos. Algunos artículos no han sido adecuadament e resumidos o se presume que han sido colocados para llenar vacíos en su artículo. (4-3 ptos.)      | La cantidad de artículos considerados ha sido < 3. La mayor parte de la información obtenida no es relevante o no está adecuadamente resumida. (1-2 ptos)   |
+Las métricas de software proveen ayuda a la revisión del progreso y retroalimentación del proyecto de software a los desarrolladores, esto con motivo de realizar ajustes en planes futuros. Estas métricas son la cuantifiación fundamental de la ingeniería de software, al proveer información por parte de los métodos. 
+El objetivo de las métricas no es mantenerse aisladas del proceso de construcción del software, por el contrario se busca que estas ayuden a los desarrolladores a medir, administrar los cambios y la complejidad del software.
 
 ---
 
@@ -299,3 +531,12 @@ Aquí van las conclusiones.
 - Sommerville, I., (2005). *Ingeniería del Software.* (7ma. Edición). Madrid: Addison-Wesley.
 - Tiwari, U., & Kumar, S. (2014). *Cyclomatic complexity metric for component based software.* ACM SIGSOFT Software Engineering Notes, 39(1), 1–6. https://doi.org/10.1145/2557833.2557853
 - Yu, S., & Zhou, S. (2010). *A Survey on Metric of Software.* 2nd IEEE Proceedings of International Conference on Information Management and Engineering (ICIME), 253–356. https://doi.org/10.1109/icime.2010.5477581
+- Frappier, M., Matwin, S., & Mili, A. (1994). Software Metrics for Predicting Maintainability. Journal Of Software Maintenance Research   And Practice, 3(3), 129–143. Retrieved from http://www3.interscience.wiley.com/journal/113445994/abstract
+- Informática, D. De, & Ciencias, F. De. (2013). open source utilizando métricas de orientación a objetos. 15–29.
+- Arafati, O., & Riehle, D. (2009, May). The comment density of open source software code. In 2009 31st International Conference on Software Engineering-Companion Volume (pp. 195-198). IEEE.
+- Lanza, M., & Marinescu, R. (2007). Object-oriented metrics in practice: using software metrics to characterize, evaluate, and improve the design of object-oriented systems. Springer Science & Business Media.
+- Farooq, Sheikh Umar & Quadri, SMK & Ahmad, Nurain. (2012). Metrics, models and measurements in software reliability. IEEE 10th Jubilee International Symposium on Applied Machine Intelligence and Informatics, SAMI 2012 - Proceedings. 441-449. 10.1109/SAMI.2012.6209008.
+- Jatain, Aman & mehta, Yukti. (2014). Metrics and Models for Software Reliability: A Systematic Review. 10.1109/ICICICT.2014.6781281.
+- Jiang, Z. M. (2006). Visualizing and understanding code duplication in large software systems (Master's thesis, University of Waterloo).
+- Hordijk, W., Ponisio, M. L., & Wieringa, R. (2009, April). Harmfulness of Code Duplication-A Structured Review of the Evidence. In EASE.
+- G. Ann Campbell (2018, September). COGNITIVE COMPLEXITY A new way of measuring understandability. https://www.sonarsource.com/docs/CognitiveComplexity.pdf
